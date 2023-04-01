@@ -4,7 +4,8 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".FridgeActivity">
+    tools:context=".FridgeActivity"
+    >
 
     <ImageView
         android:id="@+id/FA_FridgeImage"
@@ -18,24 +19,28 @@
         app:srcCompat="@drawable/fridge_image_svg" />
 
     <LinearLayout
-        android:paddingTop="30dp"
-        android:paddingBottom="30dp"
-        android:paddingLeft="20dp"
-        android:paddingRight="20dp"
-        android:layout_width="409dp"
-        android:layout_height="314dp"
+        android:layout_width="410dp"
+        android:layout_height="223dp"
         android:orientation="horizontal"
+        android:paddingLeft="20dp"
+        android:paddingTop="30dp"
+        android:paddingRight="20dp"
+        android:paddingBottom="30dp"
+        app:flow_horizontalGap="@dimen/material_emphasis_medium"
         app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
-        app:flow_horizontalGap="@dimen/material_emphasis_medium">
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.564">
 
         <Button
             android:id="@+id/FA_AddItems"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_weight="1"
-            android:paddingRight="20dp"
             android:paddingLeft="20dp"
+            android:paddingRight="20dp"
             android:text="Add Items" />
 
         <Button
@@ -54,4 +59,15 @@
             android:layout_weight="1"
             android:text="Open Fridge" />
     </LinearLayout>
+
+    <Button
+        android:id="@+id/BackMenu"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="To the Menu"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.746" />
 </androidx.constraintlayout.widget.ConstraintLayout>
