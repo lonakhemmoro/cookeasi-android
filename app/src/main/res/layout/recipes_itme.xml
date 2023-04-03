@@ -8,16 +8,11 @@
     <RelativeLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:layout_margin="4dp"
-        >
-        <ImageView
-            android:id="@+id/RecipePicture"
-            android:layout_width="50dp"
-            android:layout_height="50dp"
-            android:padding = "2dp"/>
+        android:layout_margin="4dp">
+
 
         <TextView
-            android:id="@+id/TitleRecipe"
+            android:id="@+id/Title"
             android:layout_width="94dp"
             android:layout_height="wrap_content"
             android:layout_alignParentStart="true"
@@ -34,11 +29,16 @@
             android:layout_height="wrap_content"
             android:layout_alignParentStart="true"
             android:layout_alignParentEnd="true"
+            android:layout_marginVertical="30dp"
             android:layout_marginStart="53dp"
             android:layout_marginEnd="282dp"
-            android:layout_marginVertical="30dp"
             android:text="small size"
             android:textSize="14sp" />
+
+        <ImageView
+            android:id="@+id/imageView1"
+            android:layout_width="50dp"
+            android:layout_height="50dp" />
 
     </RelativeLayout>
 

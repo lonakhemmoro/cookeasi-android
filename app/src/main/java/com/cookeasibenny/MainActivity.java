@@ -9,20 +9,32 @@ import android.widget.Button;
 
 public class MainActivity extends AppCompatActivity {
 private Button Fridge;
-    @Override
+private Button Recycler;
+
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+
 Fridge = (Button) findViewById(R.id.MA_OpenFridge);
+
 Fridge.setOnClickListener(new View.OnClickListener() {
-    @Override
+
     public void onClick(View v) {
         openFridgeMA();
     }
 });
+
+
+
+
+
+
+
         }
         public void openFridgeMA(){
         Intent openFridgeIntent = new Intent(this, FridgeActivity.class);
         startActivity(openFridgeIntent);
         }
+
     }
+

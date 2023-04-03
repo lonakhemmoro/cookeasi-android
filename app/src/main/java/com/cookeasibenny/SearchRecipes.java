@@ -1,35 +1,35 @@
 package com.cookeasibenny;
 
+import android.os.Bundle;
+
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.recyclerview.widget.LinearLayoutManager;
-
-import android.os.Bundle;
-import android.widget.EditText;
+import androidx.recyclerview.widget.RecyclerView;
 
 import java.util.ArrayList;
+import java.util.List;
 
 public class SearchRecipes extends AppCompatActivity {
-private androidx.recyclerview.R RecipeRecycler;
-private androidx.recyclerview.widget.LinearLayoutManager RecipeLayoutManager;
 
-    @Override
     protected void onCreate(Bundle savedInstanceState) {
+
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_search_recipes);
-sampleRecipes();
-//this is the start to an array we can use for the recipe list, then we can add onclick to these later
-ArrayList<RecipeData> recipeData = new ArrayList<>();
-recipeData.add(new RecipeData(R.drawable.veggie_button, "This is a Title", "this is a subheader"));
-EditText searchFunction1 = findViewById(R.id.search);
 
 
 
+
+
+
+
+
+        List< itemRecipe> items = new ArrayList<com.cookeasibenny.itemRecipe>();
+        items.add(new itemRecipe(com.cookeasibenny.R.drawable.fridge_image_svg, "Test recipe","the best test ever"));
+        items.add(new itemRecipe(com.cookeasibenny.R.drawable.fridge_image_svg, "Test recipe","the best test ever"));
+        items.add(new itemRecipe(com.cookeasibenny.R.drawable.fridge_image_svg, "Test recipe","the best test ever"));
+
+        RecyclerView recyclerView = findViewById(//---------------);
+        recyclerView.setLayoutManager(new LinearLayoutManager(this));
+        recyclerView.setAdapter(new AdapterRecipe(getApplicationContext(),items));
     }
-
-
-    private void sampleRecipes(){
-
-    }
-
-
 }
