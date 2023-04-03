@@ -28,7 +28,7 @@ public class SearchRecipes extends AppCompatActivity {
         items.add(new itemRecipe(com.cookeasibenny.R.drawable.fridge_image_svg, "Test recipe","the best test ever"));
         items.add(new itemRecipe(com.cookeasibenny.R.drawable.fridge_image_svg, "Test recipe","the best test ever"));
 
-        RecyclerView recyclerView = findViewById(//---------------);
+        RecyclerView recyclerView = findViewById(com.cookeasibenny.R.id.searchRecycler);
         recyclerView.setLayoutManager(new LinearLayoutManager(this));
         recyclerView.setAdapter(new AdapterRecipe(getApplicationContext(),items));
     }

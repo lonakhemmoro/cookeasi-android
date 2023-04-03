@@ -54,14 +54,14 @@
                 android:id="@+id/ButtonCollapseMenu"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
-                android:background="match_parent"
+
                 android:orientation="horizontal">
 
                 <ImageView
                     android:id="@+id/grainsImage"
                     android:layout_width="80dp"
                     android:layout_height="80dp"
-                    android:background="match_parent"
+
                     app:srcCompat="@drawable/veggie_button"
                     />
 
@@ -69,7 +69,7 @@
                     android:id="@+id/BasicsImage"
                     android:layout_width="80dp"
                     android:layout_height="80dp"
-                    android:background="match_parent"
+
                     app:srcCompat="@drawable/flour_button" />
             </LinearLayout>
 
@@ -78,26 +78,26 @@
                 android:id="@+id/BasicsCollapse"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
-                android:background="match_parent"
+
                 android:orientation="vertical">
 
                 <ImageView
                     android:id="@+id/basicsImage"
                     android:layout_width="match_parent"
                     android:layout_height="80dp"
-                    android:background="match_parent"
+
                     app:srcCompat="@drawable/flour_button" />
 
                 <TableLayout
 
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
-                    android:background="match_parent">
+                    >
 
                     <TableRow
                         android:layout_width="match_parent"
                         android:layout_height="match_parent"
-                        android:background="match_parent">
+                       >
 
                         <Button
                             android:id="@+id/BrothButton"
@@ -132,7 +132,7 @@
                     <TableRow
                         android:layout_width="match_parent"
                         android:layout_height="match_parent"
-                        android:background="match_parent">
+                       >
 
                         <Button
                             android:id="@+id/OliveoilButton"
@@ -165,7 +165,7 @@
 
                     <TableRow
                         android:layout_width="match_parent"
-                        android:background="match_parent"
+
                         android:layout_height="match_parent">
 
                         <Button
@@ -196,7 +196,7 @@
                     </TableRow>
 
                     <TableRow
-                        android:background="match_parent"
+
                         android:layout_width="match_parent"
                         android:layout_height="match_parent">
 
@@ -229,14 +229,14 @@
             </LinearLayout>
 
             <LinearLayout
-                android:background="match_parent"
+
                 android:id="@+id/GrainsCollapse"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 android:orientation="vertical">
 
                 <ImageView
-                    android:background="match_parent"
+
                     android:id="@+id/GrainsImage"
                     android:layout_width="match_parent"
                     android:layout_height="80dp"
@@ -244,11 +244,11 @@
 
                 <TableLayout
                     android:layout_width="match_parent"
-                    android:background="match_parent"
+
                     android:layout_height="match_parent">
 
                     <TableRow
-                        android:background="match_parent"
+
                         android:layout_width="match_parent"
                         android:layout_height="match_parent">
 
@@ -282,7 +282,7 @@
                     </TableRow>
 
                     <TableRow
-                        android:background="match_parent"
+
 
                         android:layout_width="match_parent"
                         android:layout_height="match_parent">
@@ -295,7 +295,7 @@
                     </TableRow>
 
                     <TableRow
-                        android:background="match_parent"
+
                         android:layout_width="match_parent"
                         android:layout_height="match_parent" />
 
@@ -307,26 +307,26 @@
             </LinearLayout>
 
             <LinearLayout
-                android:background="match_parent"
+
                 android:id="@+id/VegetableCollapse"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 android:orientation="vertical">
 
                 <ImageView
-                    android:background="match_parent"
+
                     android:id="@+id/VegetablesImage"
                     android:layout_width="match_parent"
                     android:layout_height="80dp"
                     app:srcCompat="@drawable/flour_button" />
 
                 <TableLayout
-                    android:background="match_parent"
+
                     android:layout_width="match_parent"
                     android:layout_height="match_parent">
 
                     <TableRow
-                        android:background="match_parent"
+
                         android:layout_width="match_parent"
                         android:layout_height="match_parent">
 
@@ -338,7 +338,7 @@
                     </TableRow>
 
                     <TableRow
-                        android:background="match_parent"
+
                         android:layout_width="match_parent"
                         android:layout_height="match_parent">
 
@@ -372,7 +372,7 @@
                     </TableRow>
 
                     <TableRow
-                        android:background="match_parent"
+
                         android:layout_width="match_parent"
                         android:layout_height="match_parent">
 
@@ -407,7 +407,7 @@
 
                     <TableRow
 
-                        android:background="match_parent"
+
                         android:layout_width="match_parent"
                         android:layout_height="match_parent">
 
@@ -441,7 +441,7 @@
                     </TableRow>
 
                     <TableRow
-                        android:background="match_parent"
+
                         android:layout_width="match_parent"
                         android:layout_height="match_parent">
 
@@ -471,26 +471,26 @@
             </LinearLayout>
 
             <LinearLayout
-                android:background="match_parent"
+
                 android:id="@+id/ProteinCollapse"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 android:orientation="vertical">
 
                 <ImageView
-                    android:background="match_parent"
+
                     android:id="@+id/ProteinImage"
                     android:layout_width="match_parent"
                     android:layout_height="80dp"
                     app:srcCompat="@drawable/flour_button" />
 
                 <TableLayout
-                    android:background="match_parent"
+
                     android:layout_width="match_parent"
                     android:layout_height="match_parent">
 
                     <TableRow
-                        android:background="match_parent"
+
                         android:layout_width="match_parent"
                         android:layout_height="match_parent">
 
@@ -520,7 +520,7 @@
                     </TableRow>
 
                     <TableRow
-                        android:background="match_parent"
+
                         android:layout_width="match_parent"
                         android:layout_height="match_parent">
 
@@ -556,26 +556,26 @@
             </LinearLayout>
 
             <LinearLayout
-                android:background="match_parent"
+
                 android:id="@+id/FruitCollapse"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 android:orientation="vertical">
 
                 <ImageView
-                    android:background="match_parent"
+
                     android:id="@+id/FruitImage"
                     android:layout_width="match_parent"
                     android:layout_height="80dp"
                     app:srcCompat="@drawable/flour_button" />
 
                 <TableLayout
-                    android:background="match_parent"
+
                     android:layout_width="match_parent"
                     android:layout_height="match_parent">
 
                     <TableRow
-                        android:background="match_parent"
+
                         android:layout_width="match_parent"
                         android:layout_height="match_parent">
 

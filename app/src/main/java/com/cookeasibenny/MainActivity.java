@@ -16,11 +16,17 @@ private Button Recycler;
         setContentView(R.layout.activity_main);
 
 Fridge = (Button) findViewById(R.id.MA_OpenFridge);
-
+Recycler = (Button) findViewById(R.id.RecyclerButtton1);
 Fridge.setOnClickListener(new View.OnClickListener() {
 
     public void onClick(View v) {
         openFridgeMA();
+    }
+});
+Recycler.setOnClickListener(new View.OnClickListener(){
+
+    public void onClick(View w){
+        openRecyclerMA();
     }
 });
 
@@ -29,7 +35,11 @@ Fridge.setOnClickListener(new View.OnClickListener() {
 
 
 
+        }
 
+        public void openRecyclerMA(){
+        Intent openRecyclerIntent = new Intent(this, SearchRecipes.class);
+        startActivity(openRecyclerIntent);
         }
         public void openFridgeMA(){
         Intent openFridgeIntent = new Intent(this, FridgeActivity.class);
