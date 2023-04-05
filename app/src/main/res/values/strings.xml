@@ -1,4 +1,21 @@
 <resources>
     <string name="app_name">CookeasiBenny</string>
-    <string name="test">testing!! </string>
+    <string name="test">testing!!</string>
+
+    <string name="recipe_example">
+2 eggs<br />
+Salt and pepper<br />
+Butter or oil for cooking<br />
+<p>
+    Instructions:<br />
+
+Crack two eggs into a bowl and beat them with a fork.<br />
+Season the eggs with a pinch of salt and pepper.<br />
+Heat a small non-stick pan over medium heat.<br />
+Add a small knob of butter or a drizzle of oil to the pan.<br />
+Once the butter has melted or the oil is hot, pour in the beaten eggs.<br />
+Use a spatula to stir the eggs gently as they cook, until they are scrambled to your liking.<br />
+Serve hot and enjoy! </p> </string>
+
+
 </resources>
