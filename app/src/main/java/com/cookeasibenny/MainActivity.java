@@ -10,6 +10,8 @@ import android.widget.Button;
 public class MainActivity extends AppCompatActivity {
 private Button Fridge;
 private Button Recycler;
+private Button About;
+private Button FindRecipe;
 
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -17,6 +19,8 @@ private Button Recycler;
 
 Fridge = (Button) findViewById(R.id.MA_OpenFridge);
 Recycler = (Button) findViewById(R.id.RecyclerButtton1);
+About = (Button) findViewById(R.id.MA_About);
+FindRecipe = (Button) findViewById(R.id.MA_FindRecipe);
 Fridge.setOnClickListener(new View.OnClickListener() {
 
     public void onClick(View v) {
@@ -29,22 +33,37 @@ Recycler.setOnClickListener(new View.OnClickListener(){
         openRecyclerMA();
     }
 });
+About.setOnClickListener(new View.OnClickListener(){
 
+    public void onClick(View w){
+                openAboutMA();
+            }
+});
+FindRecipe.setOnClickListener(new View.OnClickListener(){
 
+    public void onClick(View w){openMA_FindRecipe();}
+});
 
 
 
 
         }
 
-        public void openRecyclerMA(){
+    private void openAboutMA() {
+        Intent openAboutIntent = new Intent(this, AboutActivity.class);
+        startActivity(openAboutIntent);
+        }
+    public void openRecyclerMA(){
         Intent openRecyclerIntent = new Intent(this, SearchRecipes.class);
         startActivity(openRecyclerIntent);
         }
-        public void openFridgeMA(){
+    public void openFridgeMA(){
         Intent openFridgeIntent = new Intent(this, FridgeActivity.class);
         startActivity(openFridgeIntent);
         }
-
+    public void openMA_FindRecipe(){
+        Intent openFindRecipeIntent = new Intent(this, SearchRecipes.class);
+        startActivity(openFindRecipeIntent);
+    }
     }
 
