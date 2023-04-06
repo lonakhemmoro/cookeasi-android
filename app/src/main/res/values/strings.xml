@@ -17,5 +17,178 @@ Once the butter has melted or the oil is hot, pour in the beaten eggs.<br />
 Use a spatula to stir the eggs gently as they cook, until they are scrambled to your liking.<br />
 Serve hot and enjoy! </p> </string>
 
+    <string name="avocado_toast">
+        toast<br />
+avocado<br />
+salt<br />
+pepper<br />
+red pepper flakes<br />
+        <p>
+  Instructions:<br />
+  1. Toast 2 slices of whole grain bread to your desired level of doneness.<br />
+  2. Cut an avocado in half, remove the pit and mash the flesh with a fork.<br />
+  3. Spread the mashed avocado onto the toasted bread.<br />
+  4. Sprinkle salt, pepper, and red pepper flakes on top of the avocado toast.<br />
+  5. Serve immediately and enjoy!
+</p>
+    </string>
 
+    <string name="yogurt_parfait">
+        greek yogurt<br />
+        fresh or frozen berries<br />
+        granola<br />
+        <p>
+  Instructions:<br />
+  1. Take a jar or a bowl.<br />
+  2. Add a layer of Greek yogurt at the bottom.<br />
+  3. Add a layer of fresh or frozen berries of your choice on top of the yogurt.<br />
+  4. Repeat the layering of yogurt and berries until the jar is full.<br />
+  5. Sprinkle granola on top of the final layer of yogurt.<br />
+  6. Serve immediately and enjoy!
+</p>
+    </string>
+    
+    <string name="peanut_butter_banana_smoothie">
+        frozen banana<br />
+        almond milk<br />
+        peanut butter<br />
+        honey<br />
+        <p>
+  Instructions:<br />
+  1. Cut a frozen banana into small pieces.<br />
+  2. Add the frozen banana pieces, 1/2 cup of almond milk, 1 tablespoon of peanut butter, and 1 tablespoon of honey to a blender.<br />
+  3. Blend all the ingredients until smooth.<br />
+  4. Pour the smoothie into a glass and serve immediately.<br />
+  5. Enjoy your delicious and healthy smoothie!
+</p>
+    </string>
+    
+    <string name="grilled_chicken_salad">
+        chicken breast<br />
+        salt<br />
+        pepper<br />
+        lettuce<br />
+        tomatoes<br />
+        cucumbers<br />
+        vinaigrette dressing<br />
+        <p>
+  Instructions:<br />
+  1. Preheat a grill to medium-high heat.<br />
+  2. Season 4 chicken breast with salt, pepper, and your favorite spices.<br />
+  3. Place the chicken breasts on the grill and cook for 6 to 7 minutes on each side, or until the internal temperature reaches 165°F.<br />
+  4. Remove the chicken from the grill and let it cool for a few minutes.<br />
+  5. Chop the grilled chicken into bite-sized pieces.<br />
+  6. In a large bowl, mix together your lettuce, tomatoes, cucumbers, and a vinaigrette dressing.<br />
+  7. Add the chopped chicken to the salad and mix everything together.<br />
+  8. Serve immediately and enjoy!
+</p>
+    </string>
+    
+    <string name="veggie_wrap">
+        whole grain wrap<br />
+        hummus<br />
+        vegetables<br />
+        cheese<br />
+        lettuce<br />
+        <p>
+  Instructions:<br />
+  1. Warm a whole grain wrap in the microwave or on a pan.<br />
+  2. Spread 2 tablespoons of hummus on the wrap.<br />
+  3. Add your favorite roasted vegetables on top of the hummus.<br />
+  4. Sprinkle 1/4 cup of grated cheese on top of the vegetables.<br />
+  5. Add a handful of lettuce on top of the cheese.<br />
+  6. Roll the wrap tightly and slice it in half.<br />
+  7. Serve immediately and enjoy your delicious veggie wrap!
+</p>
+    </string>
+    
+    <string name="lentil_soup">
+        olive oil<br />
+        onion<br />
+        carrots<br />
+        celery<br />
+        dried lentils<br />
+        vegetable broth<br />
+        tomatoes<br />
+        cumin<br />
+        paprika<br />
+        salt<br />
+        pepper<br />
+        <p>
+    Instructions:<br />
+    1. Heat 1 tablespoon of olive oil in a large pot over medium heat.<br />
+    2. Add 1 diced onion, 2 chopped carrots, and 2 chopped celery stalks to the pot.<br />
+    3. Cook for 5 to 7 minutes, or until the vegetables are tender.<br />
+    4. Add 1 cup of dried lentils, 4 cups of vegetable broth, 1 can of diced tomatoes, 1 teaspoon of cumin, and 1 teaspoon of paprika to the pot.<br />
+    5. Bring the soup to a boil, then reduce the heat and simmer for 20 to 25 minutes, or until the lentils are tender.<br />
+    6. Season the soup with salt and pepper to taste.<br />
+    7. Serve the soup hot and enjoy!
+</p>
+    </string>
+    
+    <string name="baked_salmon">
+        salmon<br />
+        salt<br />
+        pepper<br />
+        honey<br />
+        soy sauce<br />
+        minced garlic<br />
+        minced ginger<br />
+        <p>
+  Instructions:<br />
+  1. Preheat the oven to 375°F.<br />
+  2. Season 4 salmon fillets with salt, pepper, and your favorite herbs and spices.<br />
+  3. Place the salmon fillets in a baking dish.<br />
+  4. Bake the salmon for 12 to 15 minutes, or until the internal temperature reaches 145°F.<br />
+  5. In a small bowl, mix together 2 tablespoons of honey, 2 tablespoons of soy sauce, 1 tablespoon of minced garlic, and 1 tablespoon of minced ginger.<br />
+  6. Brush the honey glaze on top of the baked salmon.<br />
+  7. Serve the salmon hot and enjoy!<br />
+</p>
+    </string>
+    
+    <string name="spaghetti_bolognese">
+        spaghetti<br />
+        olive oil<br />
+        onions<br />
+        carrots<br />
+        celery<br />
+        ground beef<br />
+        can of crushed tomatoes<br />
+        dried basil<br />
+        dried oregano<br />
+        <p>
+  Instructions:<br />
+  1. Cook 8 ounces of spaghetti according to the package instructions.<br />
+  2. Heat 1 tablespoon of olive oil in a large skillet over medium-high heat.<br />
+  3. Add 1 diced onion, 2 chopped carrots, and 2 chopped celery stalks to the skillet.<br />
+  4. Cook for 5 to 7 minutes, or until the vegetables are tender.<br />
+  5. Add 1 pound of ground beef to the skillet and cook until browned.<br />
+  6. Add 1 can of crushed tomatoes, 1 teaspoon of dried basil, and 1 teaspoon of dried oregano to the skillet.<br />
+  7. Reduce the heat and let the sauce simmer for 15 to 20 minutes.<br />
+  8. Serve the spaghetti with the bolognese sauce on top.<br />
+  9. Enjoy your delicious spaghetti bolognese!<br />
+</p>
+    </string>
+    
+    <string name="quinoa_and_black_bean">
+        quinoa<br />
+        black beans<br />
+        red bell peppers<br />
+        green bell pepper<br />
+        avocado<br />
+        cilantro<br />
+        olive oil<br />
+        lime juice<br />
+        cumin<br />
+        chili powder<br />
+        <p>
+  Instructions:<br />
+  1. Cook 1 cup of quinoa according to the package instructions.<br />
+  2. In a large bowl, mix together 1 can of black beans, 1 diced red bell pepper, 1 diced green bell pepper, 1 diced avocado, and 1/4 cup of chopped cilantro.<br />
+  3. Add the cooked quinoa to the bowl and mix everything together.<br />
+  4. In a small bowl, mix together 1 tablespoon of olive oil, 1 tablespoon of lime juice, 1 teaspoon of cumin, and 1 teaspoon of chili powder.<br />
+  5. Pour the dressing on top of the quinoa and black bean bowl.<br />
+  6. Serve the bowl hot or cold and enjoy!
+</p>
+    </string>
 </resources>
