@@ -9,11 +9,14 @@
 
     <TextView
         android:id="@+id/AddFridge_description"
+        text
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="28dp"
+        android:layout_marginTop="12dp"
         android:text="this is a descirption of adding items to fridge"
+        android:textSize="20sp"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.461"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
@@ -21,9 +24,11 @@
         android:id="@+id/AddF_confirmationText"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="104dp"
+        android:layout_marginTop="80dp"
         android:text="this is where the confirmation of &quot; item added&quot; goes"
         app:layout_constraintEnd_toEndOf="parent"
+        android:textSize="20sp"
+        android:padding="5dp"
         app:layout_constraintHorizontal_bias="0.498"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
@@ -34,7 +39,10 @@
         android:layout_width="match_parent"
         android:layout_height="381dp"
         android:layout_marginTop="1dp"
-        android:background="@color/white"
+        android:background="@color/neonGreen"
+        android:paddingTop="10dp"
+        android:paddingBottom="10dp"
+        android:layout_margin="10dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/AddF_confirmationText"
@@ -54,36 +62,38 @@
                 android:id="@+id/ButtonCollapseMenu"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
-
                 android:layout_gravity="fill"
                 android:orientation="horizontal"
-                android:padding="3dp"
-                android:layout_margin="5dp">
+                >
 
                 <TableLayout
                     android:layout_width="match_parent"
-                    android:layout_height="match_parent"
+                    android:layout_height="wrap_content"
+                    android:background="@color/teal_700"
                     android:layout_gravity="fill">
 
                     <TableRow
                         android:layout_width="match_parent"
                         android:layout_height="match_parent"
-                        android:layout_gravity="fill">
+                        android:layout_gravity="center"
+                        android:paddingBottom="10dp"
+                        android:gravity="center_horizontal"
+                        android:background="@color/teal_700">
 
                         <ImageButton
-                            android:id="@+id/imageButton"
+                            android:id="@+id/BasicsCollapsebtn"
                             android:layout_width="80dp"
                             android:layout_height="80dp"
-
+android:paddingStart="5dp"
                             android:background="@color/teal_700"
                             android:scaleType="fitCenter"
                             app:srcCompat="@drawable/flour_button" />
 
                         <ImageButton
-                            android:id="@+id/imageButton2"
+                            android:id="@+id/GrainsCollapsebtn"
                             android:layout_width="80dp"
                             android:layout_height="80dp"
-
+android:paddingEnd="5dp"
                             android:background="@color/teal_700"
                             android:scaleType="fitCenter"
                             app:srcCompat="@drawable/grains_quickselect" />
@@ -95,6 +105,7 @@
                             android:background="@color/teal_700"
                             android:maxHeight="80dp"
                             android:scaleType="fitCenter"
+                            android:paddingEnd="5dp"
                             app:srcCompat="@drawable/veggie_quickselect" />
 
                         <ImageButton
@@ -104,6 +115,7 @@
                             android:background="@color/teal_700"
                             android:maxHeight="80dp"
                             android:scaleType="fitCenter"
+                            android:paddingEnd="5dp"
                             app:srcCompat="@drawable/protein_quickselect" />
 
                         <ImageButton
@@ -113,8 +125,16 @@
                             android:background="@color/teal_700"
                             android:maxHeight="80dp"
                             android:scaleType="fitCenter"
+                            android:paddingEnd="5dp"
                             app:srcCompat="@drawable/fruit_quickselect" />
+
                     </TableRow>
+
+                    <TableRow
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:padding="10dp"
+                        android:background="@color/neonGreen"/>
 
                 </TableLayout>
 
@@ -128,12 +148,33 @@
                 app:layout_gravity="fill"
                 android:orientation="vertical">
 
-                <ImageView
-                    android:id="@+id/basicsImage"
+                <TableLayout
                     android:layout_width="match_parent"
-                    android:layout_height="80dp"
+                    android:layout_height="match_parent">
 
-                    app:srcCompat="@drawable/flour_button" />
+                    <TableRow
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:background="#942B972D">
+
+                        <ImageView
+                            android:id="@+id/imageView3"
+                            android:layout_width="wrap_content"
+                            android:layout_height="100dp"
+                            app:srcCompat="@drawable/basics_listing"
+                            android:padding="10dp"
+                            android:backgroundTint="#00FF9800"/>
+
+                        <ImageView
+                            android:id="@+id/basicsImage"
+                            android:layout_width="80dp"
+                            android:paddingEnd="5dp"
+                            android:layout_height="100dp"
+                            android:backgroundTint="#00FF9800"
+                            app:srcCompat="@drawable/flour_button" />
+                    </TableRow>
+
+                </TableLayout>
 
                 <TableLayout
                     android:layout_width="match_parent"
@@ -143,7 +184,8 @@
 
                     <TableRow
                         android:layout_width="match_parent"
-                        android:layout_height="match_parent" >
+                        android:layout_height="match_parent"
+                        >
 
                         <Button
                             android:id="@+id/PepperButton"
@@ -231,7 +273,6 @@
                             android:layout_height="wrap_content"
                             android:layout_margin="5dp"
                             android:text="Peanut Butter"
-                            android:maxLength=""
                             app:layout_columnWeight="1"
                             app:layout_gravity="fill"
                             app:layout_rowWeight="1" />
@@ -746,18 +787,20 @@
         android:id="@+id/AddF_BackMenu"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginBottom="28dp"
+        android:layout_marginBottom="16dp"
         android:text="Back to Menu"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
+        android:backgroundTint="@color/accentOrange"
         app:layout_constraintHorizontal_bias="0.897"
         app:layout_constraintStart_toStartOf="parent" />
     <Button
         android:id="@+id/AddF_backFridge"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginBottom="28dp"
+        android:layout_marginBottom="16dp"
         android:text="Back to Fridge"
+        android:backgroundTint="@color/accentOrange"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.141"

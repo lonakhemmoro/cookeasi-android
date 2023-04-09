@@ -9,4 +9,5 @@
     <color name="naturalBlack">#252121</color>
     <color name="Forest">#046008</color>
     <color name="white">#FFFFFF</color>
-</resources>
+    <color name="accentOrange">#FFFFD180</color>\
+    <color name="neonGreen">#FFD9FF00</color>
