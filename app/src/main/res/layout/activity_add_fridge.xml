@@ -9,10 +9,9 @@
 
     <TextView
         android:id="@+id/AddFridge_description"
-        text
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="12dp"
+        android:layout_marginTop="4dp"
         android:text="this is a descirption of adding items to fridge"
         android:textSize="20sp"
         app:layout_constraintEnd_toEndOf="parent"
@@ -161,9 +160,9 @@ android:paddingEnd="5dp"
                             android:id="@+id/imageView3"
                             android:layout_width="wrap_content"
                             android:layout_height="100dp"
-                            app:srcCompat="@drawable/basics_listing"
                             android:padding="10dp"
-                            android:backgroundTint="#00FF9800"/>
+                            android:backgroundTint="#00FF9800"
+                            app:srcCompat="@drawable/basics_listing"/>
 
                         <ImageView
                             android:id="@+id/basicsImage"
@@ -180,11 +179,44 @@ android:paddingEnd="5dp"
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
                     android:layout_gravity="fill"
+                    android:gravity="center_horizontal"
                     >
 
                     <TableRow
                         android:layout_width="match_parent"
                         android:layout_height="match_parent"
+                        android:gravity="center_horizontal">
+
+                        <Button
+                            android:id="@+id/Butter"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_margin="5dp"
+
+                            android:text="Butter" />
+
+                        <Button
+                            android:id="@+id/ChilipowderButton"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_margin="5dp"
+                            android:text="Chilli Powder"
+                            android:textSize="10dp"
+                            tools:ignore="TextSizeCheck" />
+
+                        <Button
+                            android:id="@+id/egg"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_margin="5dp"
+
+                            android:text="Egg" />
+                    </TableRow>
+
+                    <TableRow
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:gravity="center_horizontal"
                         >
 
                         <Button
@@ -220,7 +252,8 @@ android:paddingEnd="5dp"
 
                     <TableRow
                         android:layout_width="match_parent"
-                        android:layout_height="match_parent" >
+                        android:layout_height="match_parent"
+                        android:gravity="center_horizontal">
 
                         <Button
                             android:id="@+id/HoneyButton"
@@ -237,6 +270,7 @@ android:paddingEnd="5dp"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:layout_margin="5dp"
+                            android:textSize="10sp"
                             android:text="Chilli Flakes"
                             app:layout_columnWeight="1"
                             app:layout_gravity="fill"
@@ -255,7 +289,8 @@ android:paddingEnd="5dp"
 
                     <TableRow
                         android:layout_width="match_parent"
-                        android:layout_height="match_parent" >
+                        android:layout_height="match_parent"
+                        android:gravity="center_horizontal">
 
                         <Button
                             android:id="@+id/CuminButton"
@@ -274,13 +309,13 @@ android:paddingEnd="5dp"
                             android:layout_margin="5dp"
                             android:text="Peanut Butter"
                             app:layout_columnWeight="1"
+                            android:textSize="10sp"
                             app:layout_gravity="fill"
                             app:layout_rowWeight="1" />
 
                         <Button
                             android:id="@+id/SoysauceButton"
                             android:layout_width="wrap_content"
-
                             android:layout_height="wrap_content"
                             android:layout_margin="5dp"
                             android:text="Soy Sauce"
@@ -290,7 +325,8 @@ android:paddingEnd="5dp"
 
                     <TableRow
                         android:layout_width="match_parent"
-                        android:layout_height="match_parent" >
+                        android:layout_height="match_parent"
+                        android:gravity="center_horizontal">
 
                         <Button
                             android:id="@+id/SugarButton"
@@ -308,6 +344,7 @@ android:paddingEnd="5dp"
                             android:layout_height="wrap_content"
                             android:layout_margin="5dp"
                             android:text="Vinagrette"
+                            android:textSize="12sp"
                             app:layout_columnWeight="1"
                             app:layout_gravity="fill"
                             app:layout_rowWeight="1" />
@@ -324,7 +361,8 @@ android:paddingEnd="5dp"
                     </TableRow>
                     <TableRow
                         android:layout_width="match_parent"
-                        android:layout_height="match_parent" >
+                        android:layout_height="match_parent"
+                        android:gravity="center_horizontal">
 
                         <Button
                             android:id="@+id/OreganoButton"
@@ -355,6 +393,7 @@ android:paddingEnd="5dp"
                             app:layout_columnWeight="1"
                             app:layout_gravity="fill"
                             app:layout_rowWeight="1" />
+
                     </TableRow>
 
                 </TableLayout>
@@ -368,12 +407,33 @@ android:paddingEnd="5dp"
                 android:layout_height="match_parent"
                 android:orientation="vertical">
 
-                <ImageView
-
-                    android:id="@+id/GrainsImage"
+                <TableLayout
                     android:layout_width="match_parent"
-                    android:layout_height="80dp"
-                    app:srcCompat="@drawable/grains_quickselect" />
+                    android:layout_height="match_parent">
+
+                    <TableRow
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent" >
+
+                        <ImageView
+                            android:id="@+id/imageView4"
+                            android:layout_width="wrap_content"
+                            android:layout_height="100dp"
+                            android:padding="10dp"
+                            android:backgroundTint="#00FF9800"
+                            app:srcCompat="@drawable/grains_listing" />
+
+                        <ImageView
+
+                            android:id="@+id/GrainsImage"
+                            android:layout_width="80dp"
+                            android:paddingEnd="5dp"
+                            android:layout_height="100dp"
+                            android:backgroundTint="#00FF9800"
+                            app:srcCompat="@drawable/grains_quickselect" />
+                    </TableRow>
+
+                </TableLayout>
 
                 <TableLayout
                     android:layout_width="match_parent"
@@ -384,7 +444,8 @@ android:paddingEnd="5dp"
 
                         android:layout_width="match_parent"
                         android:layout_height="match_parent"
-                        app:layout_gravity="fill">
+                        app:layout_gravity="fill"
+                        android:gravity="center_horizontal">
 
                         <Button
                             android:id="@+id/ToastButton"
@@ -398,12 +459,14 @@ android:paddingEnd="5dp"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:layout_margin="5dp"
-                            android:text="Whole Grain" />
+                            android:text="Wheat Wrap"
+                            android:textSize="12dp" />
 
                         <Button
                             android:id="@+id/SpaghettiButton"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
+                            android:textSize="12dp"
                             android:layout_margin="5dp"
                             android:text="Spaghetti" />
 
@@ -413,7 +476,8 @@ android:paddingEnd="5dp"
 
                         app:layout_gravity="fill"
                         android:layout_width="match_parent"
-                        android:layout_height="match_parent">
+                        android:layout_height="match_parent"
+                        android:gravity="center_horizontal">
 
                         <Button
                             android:id="@+id/GranolaButton"
@@ -421,13 +485,6 @@ android:paddingEnd="5dp"
                             android:layout_height="wrap_content"
                             android:layout_margin="5dp"
                             android:text="Granola" />
-
-                        <Button
-                            android:id="@+id/ChilipowderButton"
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:layout_margin="5dp"
-                            android:text="Chilli Powder" />
 
                         <Button
                             android:id="@+id/QuinoaButton"
@@ -440,11 +497,13 @@ android:paddingEnd="5dp"
                     <TableRow
 
                         android:layout_width="match_parent"
-                        android:layout_height="match_parent" />
+                        android:layout_height="match_parent"
+                        android:gravity="center_horizontal"/>
 
                     <TableRow
                         android:layout_width="match_parent"
-                        android:layout_height="match_parent" />
+                        android:layout_height="match_parent"
+                        android:gravity="center_horizontal"/>
                 </TableLayout>
 
             </LinearLayout>
@@ -456,12 +515,33 @@ android:paddingEnd="5dp"
                 android:layout_height="match_parent"
                 android:orientation="vertical">
 
-                <ImageView
-
-                    android:id="@+id/VegetablesImage"
+                <TableLayout
                     android:layout_width="match_parent"
-                    android:layout_height="80dp"
-                    app:srcCompat="@drawable/veggie_quickselect" />
+                    android:layout_height="match_parent">
+
+                    <TableRow
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent" >
+
+                        <ImageView
+                            android:id="@+id/imageView5"
+                            android:layout_width="wrap_content"
+                            android:layout_height="100dp"
+                            android:padding="10dp"
+                            android:backgroundTint="#00FF9800"
+                            app:srcCompat="@drawable/vegetables_listing" />
+
+                        <ImageView
+
+                            android:id="@+id/VegetablesImage"
+                            android:layout_width="80dp"
+                            android:layout_height="100dp"
+                            android:backgroundTint="#00FF9800"
+                            android:paddingEnd="5dp"
+                            app:srcCompat="@drawable/veggie_quickselect" />
+                    </TableRow>
+
+                </TableLayout>
 
                 <TableLayout
                     app:layout_gravity="fill"
@@ -473,7 +553,8 @@ android:paddingEnd="5dp"
                     <TableRow
 
                         android:layout_width="match_parent"
-                        android:layout_height="match_parent">
+                        android:layout_height="match_parent"
+                        android:gravity="center_horizontal">
 
                         <Button
                             android:id="@+id/LimeButton"
@@ -500,7 +581,8 @@ android:paddingEnd="5dp"
                     <TableRow
                         app:layout_gravity="fill"
                         android:layout_width="match_parent"
-                        android:layout_height="match_parent">
+                        android:layout_height="match_parent"
+                        android:gravity="center_horizontal">
 
                         <Button
                             android:id="@+id/OnionButton"
@@ -529,7 +611,8 @@ android:paddingEnd="5dp"
                     <TableRow
                         app:layout_gravity="fill"
                         android:layout_width="match_parent"
-                        android:layout_height="match_parent">
+                        android:layout_height="match_parent"
+                        android:gravity="center_horizontal">
 
                         <Button
                             android:id="@+id/CeleryButton"
@@ -543,8 +626,9 @@ android:paddingEnd="5dp"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:layout_margin="5dp"
+                            android:text="Dried Lentils"
                             android:textSize="10dp"
-                            android:text="Dried Lentils" />
+                            tools:ignore="TextSizeCheck" />
 
                         <Button
                             android:id="@+id/TomatoButton"
@@ -559,7 +643,8 @@ android:paddingEnd="5dp"
 
                         app:layout_gravity="fill"
                         android:layout_width="fill_parent"
-                        android:layout_height="match_parent">
+                        android:layout_height="match_parent"
+                        android:gravity="center_horizontal">
 
                         <Button
                             android:id="@+id/CannedTomatosButton"
@@ -589,16 +674,16 @@ android:paddingEnd="5dp"
 
                     <TableRow
                         app:layout_gravity="fill"
-
+                        android:gravity="center_horizontal"
                         android:layout_height="match_parent"
                         android:layout_width="fill_parent">
 
                         <Button
-                            android:id="@+id/button15"
+                            android:id="@+id/potato"
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
                             android:layout_margin="5dp"
-                            android:text="not sure" />
+                            android:text="Potato" />
 
                         <Button
                             android:id="@+id/GingerButton"
@@ -618,7 +703,8 @@ android:paddingEnd="5dp"
                     <TableRow
                         app:layout_gravity="fill"
                         android:layout_width="match_parent"
-                        android:layout_height="match_parent">>
+                        android:layout_height="match_parent"
+                        android:gravity="center_horizontal">
                         <Button
                             android:id="@+id/LettuceButton"
                             android:layout_width="match_parent"
@@ -637,12 +723,33 @@ android:paddingEnd="5dp"
                 android:layout_height="match_parent"
                 android:orientation="vertical">
 
-                <ImageView
-
-                    android:id="@+id/ProteinImage"
+                <TableLayout
                     android:layout_width="match_parent"
-                    android:layout_height="80dp"
-                    app:srcCompat="@drawable/protein_quickselect" />
+                    android:layout_height="match_parent">
+
+                    <TableRow
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent" >
+
+                        <ImageView
+                            android:id="@+id/imageView6"
+                            android:layout_width="wrap_content"
+                            android:layout_height="100dp"
+                            android:backgroundTint="#00FF9800"
+                            android:padding="10dp"
+                            app:srcCompat="@drawable/protein_listing" />
+
+                        <ImageView
+
+                            android:id="@+id/ProteinImage"
+                            android:layout_width="80dp"
+                            android:layout_height="100dp"
+                            android:backgroundTint="#00FF9800"
+                            android:paddingEnd="5dp"
+                            app:srcCompat="@drawable/protein_quickselect" />
+                    </TableRow>
+
+                </TableLayout>
 
                 <TableLayout
 
@@ -733,12 +840,33 @@ android:paddingEnd="5dp"
                 android:layout_height="match_parent"
                 android:orientation="vertical">
 
-                <ImageView
-
-                    android:id="@+id/FruitImage"
+                <TableLayout
                     android:layout_width="match_parent"
-                    android:layout_height="80dp"
-                    app:srcCompat="@drawable/fruit_quickselect" />
+                    android:layout_height="match_parent">
+
+                    <TableRow
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent" >
+
+                        <ImageView
+                            android:id="@+id/imageView7"
+                            android:layout_width="wrap_content"
+                            android:layout_height="100dp"
+                            android:backgroundTint="#00FF9800"
+                            android:padding="10dp"
+                            app:srcCompat="@drawable/fruit_listing" />
+
+                        <ImageView
+
+                            android:id="@+id/FruitImage"
+                            android:layout_width="80dp"
+                            android:layout_height="100dp"
+                            android:backgroundTint="#00FF9800"
+                            android:paddingEnd="5dp"
+                            app:srcCompat="@drawable/fruit_quickselect" />
+                    </TableRow>
+
+                </TableLayout>
 
                 <TableLayout
 

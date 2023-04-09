@@ -22,9 +22,18 @@ public class FridgeActivity extends AppCompatActivity {
                 openBackMenu();
             }
         });
-
+Rec.setOnClickListener(new View.OnClickListener() {
+    @Override
+    public void onClick(View v) {
+        OpenAddfridge();
+    }
+});
     }
 
+    public void OpenAddfridge() {
+        Intent openAddFridge = new Intent(this, AddFridgeActivity.class);
+        startActivity(openAddFridge);
+    }
 
 
     public void openBackMenu(){
