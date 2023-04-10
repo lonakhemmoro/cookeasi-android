@@ -1,88 +1,105 @@
 package com.cookeasibenny;
 
-import java.util.*;
+import java.util.HashMap;
+import java.util.Map;
 
 public class FridgeItinerary {
-    private Map<String, Ingredient> ingredients = new HashMap<>();
+    public static Map<String, Ingredient> FridgeContents = new HashMap<>();
 
-    public void addIngredient(String name, double quantity, String measurement) {
-        Ingredient ingredient = new Ingredient(name, quantity, measurement);
-        ingredients.put(name.toLowerCase(), ingredient);
+    public static void addIngredient(String name) {
+        Ingredient ingred = new Ingredient(name);
+        FridgeContents.put(name.toLowerCase(), ingred);
     }
 
-    public void removeIngredient(String name) {
-        ingredients.remove(name.toLowerCase());
+    public static void addIngredient(String name, boolean inStock) {
+        Ingredient ingred = new Ingredient(name, inStock);
+        FridgeContents.put(name.toLowerCase(), ingred);
     }
 
-    public void addQuantity(String name, double quantity) {
-        Ingredient ingredient = ingredients.get(name.toLowerCase());
-        if (ingredient != null) {
-            ingredient.addQuantity(quantity);
+    public static void removeIngredient(String name) {
+        FridgeContents.remove(name.toLowerCase());
+    }
+
+    public static void setInStock(String name, boolean inStock) {
+        Ingredient ingred = FridgeContents.get(name.toLowerCase());
+        if (ingred != null) {
+            ingred.setInStock(inStock);
         }
     }
 
-    public void subtractQuantity(String name, double quantity) {
-        Ingredient ingredient = ingredients.get(name.toLowerCase());
-        if (ingredient != null) {
-            ingredient.subtractQuantity(quantity);
-            if (ingredient.getQuantity() <= 0) {
-                ingredients.remove(name.toLowerCase());
+    public static void printItinerary() {
+        System.out.println("Ingredient Itinerary:");
+        System.out.println("---------------------");
+        for (Ingredient ingred : FridgeContents.values()) {
+            System.out.println(ingred.getInStock() + " " + ingred.getName());
+        }
+    }
+
+    public static String getInStockIngredients() {
+        StringBuilder sb = new StringBuilder();
+        for (Ingredient ingredient : FridgeContents.values()) {
+            if (ingredient.getInStock()) {
+                sb.append(ingredient.getName()).append(",");
             }
         }
-    }
-
-    public void changeMeasurement(String name, String measurement) {
-        Ingredient ingredient = ingredients.get(name.toLowerCase());
-        if (ingredient != null) {
-            ingredient.setMeasurement(measurement);
+        if (sb.length() > 0) {
+            sb.deleteCharAt(sb.length() - 1); // Remove the trailing comma
         }
+        return sb.toString();
     }
 
-    public void printItinerary() {
-        System.out.println("Fridge Itinerary:");
-        System.out.println("---------------------");
-        for (Ingredient ingredient : ingredients.values()) {
-            System.out.println(ingredient.getQuantity() + " " + ingredient.getMeasurement() + " " + ingredient.getName());
-        }
-    }
-
-    private class Ingredient {
+    public static class Ingredient {
         private String name;
-        private double quantity;
-        private String measurement;
+        private boolean inStock;
 
-        public Ingredient(String name, double quantity, String measurement) {
+        public Ingredient(String name) {
             this.name = name;
-            this.quantity = quantity;
-            this.measurement = measurement;
+            this.inStock = true;
+        }
+
+        public Ingredient(String name, boolean inStock) {
+            this.name = name;
+            this.inStock = inStock;
         }
 
         public String getName() {
             return name;
         }
 
-        public double getQuantity() {
-            return quantity;
+        public boolean getInStock() {
+            return inStock;
         }
 
-        public String getMeasurement() {
-            return measurement;
+        public void setInStock(boolean inStock) {
+            this.inStock = inStock;
         }
 
-        public void setQuantity(double quantity) {
-            this.quantity = quantity;
-        }
-
-        public void setMeasurement(String measurement) {
-            this.measurement = measurement;
-        }
-
-        public void addQuantity(double quantity) {
-            this.quantity += quantity;
-        }
-
-        public void subtractQuantity(double quantity) {
-            this.quantity -= quantity;
+        public void setNotInStock(String name) {
+            Ingredient ingred = FridgeContents.get(name.toLowerCase());
+            if (ingred != null) {
+                ingred.setInStock(false);
+            }
         }
     }
+//tester
+ /*   public static void main(String[] args) {
+        // Add ingredients
+        addIngredient("flour");
+        addIngredient("sugar", true);
+        addIngredient("butter", false);
+        addIngredient("eggs");
+
+        // Set inStock for some ingredients
+        setInStock("flour", false);
+        setInStock("butter", true);
+
+        // Remove an ingredient
+        removeIngredient("eggs");
+
+        // Add a new ingredient
+        addIngredient("milk", true);
+
+        // Print the itinerary
+        printItinerary();
+    }*/
 }
