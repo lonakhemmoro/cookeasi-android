@@ -1,15 +1,16 @@
 package com.cookeasibenny;
 
 import static android.view.View.INVISIBLE;
-
+import androidx.transition.Slide;
 import androidx.appcompat.app.AppCompatActivity;
-
+import android.transition.TransitionManager;
 import android.os.Bundle;
 import android.content.Intent;
 import android.view.View;
 import android.widget.Button;
 import android.widget.ImageButton;
-
+import androidx.transition.Transition;
+import android.view.Gravity;
 public class AddFridgeActivity extends AppCompatActivity {
 
     //each button is broken down into respective catagories
@@ -27,6 +28,8 @@ private Button yogurt,cheese,chicken,almondmilk,hummus,groundbeef;
 private Button frzbanana,frzberries;
 
 private Button backtoFridge, BackToMenu;
+private android.view.ViewGroup BasicsVG, GrainsVG,VegetablesVG,ProteinVG,FruitVG;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -38,6 +41,8 @@ private Button backtoFridge, BackToMenu;
         CProtein = (ImageButton) findViewById(com.cookeasibenny.R.id.ProteinCollapseBtn);
         CFruit = (ImageButton) findViewById(com.cookeasibenny.R.id.FruitCollapseBtn);
 
+        BasicsVG = findViewById(com.cookeasibenny.R.id.BasicsCollapse);
+        BasicsVG.setVisibility(android.view.View.GONE);
         CBasics.setOnClickListener( new View.OnClickListener(){
             public void onClick(View x){VisibilityBasics();}
         });
@@ -69,12 +74,18 @@ private Button backtoFridge, BackToMenu;
     }
 
     public void VisibilityBasics() {
-        View Basics = findViewById(com.cookeasibenny.R.id.BasicsCollapse);
-        if (Basics.getVisibility()== android.view.View.VISIBLE){
-            Basics.setVisibility(android.view.View.GONE);
+
+        android.view.ViewGroup Basics = findViewById(com.cookeasibenny.R.id.BasicsCollapse);
+        Transition transition = new Slide(Gravity.BOTTOM);
+        Transition transition1 = new Slide(Gravity.TOP);
+        if (Basics.getVisibility()== android.view.View.GONE){
+            transition.setDuration(300);
+            transition.addTarget(Basics);
+            androidx.transition.TransitionManager.beginDelayedTransition(Basics, transition);
+            Basics.setVisibility(android.view.ViewGroup.VISIBLE);
         }
         else {
-            Basics.setVisibility(android.view.View.VISIBLE);
+            Basics.setVisibility(android.view.ViewGroup.GONE);
         }
     }
 }
