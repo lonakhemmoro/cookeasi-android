@@ -126,7 +126,6 @@
             android:id="@+id/ScrollViewAddFridgeLL"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginTop="15dp"
             android:orientation="vertical"
             android:padding="15dp">
 
@@ -137,6 +136,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 android:orientation="vertical"
+                android:visibility="gone"
                 app:layout_gravity="fill">
 
                 <TableLayout
@@ -173,6 +173,80 @@
                     android:layout_height="match_parent"
                     android:layout_gravity="fill"
                     android:gravity="center_horizontal">
+
+                    <TableRow
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:gravity="center_horizontal">
+
+                        <Button
+                            android:id="@+id/button7"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_margin="5dp"
+                            android:text="Milk"
+                            app:layout_columnWeight="1"
+                            app:layout_gravity="fill"
+                            app:layout_rowWeight="1" />
+
+                        <Button
+                            android:id="@+id/button6"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_margin="5dp"
+                            android:text="Cinnamon"
+                            app:layout_columnWeight="1"
+                            app:layout_gravity="fill"
+                            app:layout_rowWeight="1" />
+
+                        <Button
+                            android:id="@+id/button5"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_margin="5dp"
+                            android:text="Mayo"
+                            app:layout_columnWeight="1"
+                            app:layout_gravity="fill"
+                            app:layout_rowWeight="1" />
+                    </TableRow>
+
+                    <TableRow
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:gravity="center_horizontal">
+
+                        <Button
+                            android:id="@+id/button7"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_margin="5dp"
+                            android:text="Brown Sugar"
+                            android:textSize="12sp"
+                            app:layout_columnWeight="1"
+                            app:layout_gravity="fill"
+                            app:layout_rowWeight="1" />
+
+                        <Button
+                            android:id="@+id/button6"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_margin="5dp"
+                            android:text="Baking Powder"
+                            android:textSize="10sp"
+                            app:layout_columnWeight="1"
+                            app:layout_gravity="fill"
+                            app:layout_rowWeight="1" />
+
+                        <Button
+                            android:id="@+id/button5"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_margin="5dp"
+                            android:text="Vanilla"
+                            app:layout_columnWeight="1"
+                            app:layout_gravity="fill"
+                            app:layout_rowWeight="1" />
+                    </TableRow>
 
                     <TableRow
                         android:layout_width="match_parent"
@@ -398,7 +472,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 android:orientation="vertical"
-                android:visibility="gone"
+                android:visibility="visible"
                 app:layout_gravity="fill">
 
                 <TableLayout
@@ -443,6 +517,70 @@
                         app:layout_gravity="fill">
 
                         <Button
+                            android:id="@+id/BreadButton"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_margin="5dp"
+                            android:text="Bread" />
+
+                        <Button
+                            android:id="@+id/OatsButton"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_margin="5dp"
+                            android:text="Rolled Oats"
+                            android:textSize="12dp" />
+
+                        <Button
+                            android:id="@+id/GritsButton"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_margin="5dp"
+                            android:text="Grits" />
+
+                    </TableRow>
+
+                    <TableRow
+
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:gravity="center_horizontal"
+                        app:layout_gravity="fill">
+
+                        <Button
+                            android:id="@+id/BarleyButton"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_margin="5dp"
+                            android:text="Barley" />
+
+                        <Button
+                            android:id="@+id/RisottoButton"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_margin="5dp"
+                            android:text="Risotto"
+                            android:textSize="12dp" />
+
+                        <Button
+                            android:id="@+id/PuffPastryButton"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_margin="5dp"
+                            android:text="Puff Pastry"
+                            android:textSize="12dp"
+                            />
+
+                    </TableRow>
+
+                    <TableRow
+
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:gravity="center_horizontal"
+                        app:layout_gravity="fill">
+
+                        <Button
                             android:id="@+id/ToastButton"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
@@ -475,11 +613,18 @@
                         app:layout_gravity="fill">
 
                         <Button
-                            android:id="@+id/GranolaButton"
+                            android:id="@+id/granolaButton"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:layout_margin="5dp"
                             android:text="Granola" />
+
+                        <Button
+                            android:id="@+id/RiceButton"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_margin="5dp"
+                            android:text="Rice" />
 
                         <Button
                             android:id="@+id/QuinoaButton"
