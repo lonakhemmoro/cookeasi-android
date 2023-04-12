@@ -13,13 +13,20 @@
         android:layout_height="match_parent"
         android:orientation="vertical">
 
-        <EditText
-            android:id="@+id/SearchBoxRecipes"
+        <SearchView
+            android:id="@+id/SearchView"
+android:queryHint="search for recipe"
             android:layout_width="match_parent"
-            android:layout_height="80dp"
-            android:backgroundTint="@color/white"
-            android:text="search"
-            android:textColor="@color/white" />
+            android:layout_height="wrap_content">
+
+            <EditText
+                android:id="@+id/SearchBoxRecipes"
+                android:layout_width="match_parent"
+                android:layout_height="80dp"
+                android:backgroundTint="@color/white"
+                android:text="search"
+                android:textColor="@color/white" />
+        </SearchView>
 
         <androidx.recyclerview.widget.RecyclerView
             android:id="@+id/searchRecycler"

@@ -10,11 +10,15 @@ public class AdapterRecipe extends RecyclerView.Adapter<ViewHolderRecipe> {
 
     Context context;
     List<itemRecipe> items;
+    private java.util.List<com.cookeasibenny.itemRecipe> itemList;
 
 
     public AdapterRecipe(android.content.Context context, java.util.List<itemRecipe> items) {
         this.context = context;
         this.items = items;
+    }
+
+    public static void updatelist(java.util.List<com.cookeasibenny.itemRecipe> filteredList) {
     }
 
     @androidx.annotation.NonNull
@@ -33,4 +37,9 @@ public class AdapterRecipe extends RecyclerView.Adapter<ViewHolderRecipe> {
     public int getItemCount() {
          return items.size();
     }
+    public void updateList(List<itemRecipe> itemList) {
+        this.itemList = itemList;
+        notifyDataSetChanged();
+    }
+
 }
