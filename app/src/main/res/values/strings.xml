@@ -192,3 +192,11 @@ red pepper flakes<br />
 </p>
     </string>
 </resources>
+
+    <string name="about_page">
+        Welcome to cookeasi!<br />
+        Not everyone is a chef, looking at a fridge and deducing recipes is not a skill most people have.<br />
+        Hence, cookeasi. The app which conveniently takes items from your fridge and displays all the recipes possible with them.<br />
+        It's surprising to see how many different meals can be made with a fridge "lacking" in ingredients.<br />
+        cookeasi aims to save any unnecessary shopping, orders to restaurants, and even expand the horizons of ones own cooking journey.<br />
+
