@@ -180,7 +180,7 @@
                         android:gravity="center_horizontal">
 
                         <Button
-                            android:id="@+id/button7"
+                            android:id="@+id/milkButton"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:layout_margin="5dp"
@@ -190,7 +190,7 @@
                             app:layout_rowWeight="1" />
 
                         <Button
-                            android:id="@+id/button6"
+                            android:id="@+id/cinnamonButton"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:layout_margin="5dp"
@@ -200,7 +200,7 @@
                             app:layout_rowWeight="1" />
 
                         <Button
-                            android:id="@+id/button5"
+                            android:id="@+id/mayoButton"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:layout_margin="5dp"
@@ -216,7 +216,7 @@
                         android:gravity="center_horizontal">
 
                         <Button
-                            android:id="@+id/button7"
+                            android:id="@+id/brownSugarButton"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:layout_margin="5dp"
@@ -227,7 +227,7 @@
                             app:layout_rowWeight="1" />
 
                         <Button
-                            android:id="@+id/button6"
+                            android:id="@+id/bakingPowderButton"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:layout_margin="5dp"
@@ -238,7 +238,7 @@
                             app:layout_rowWeight="1" />
 
                         <Button
-                            android:id="@+id/button5"
+                            android:id="@+id/vanillaButton"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:layout_margin="5dp"
