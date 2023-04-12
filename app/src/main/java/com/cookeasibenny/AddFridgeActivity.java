@@ -490,18 +490,66 @@ private android.view.ViewGroup BasicsVG, GrainsVG,VegetablesVG,ProteinVG,FruitVG
     //all but visibilityBasics are empty, but that is the example, change R.id.BasicsCollapse to
     //respective collapse layout
     private void VisibilityGrains() {
+        android.view.ViewGroup Basics = findViewById(R.id.GrainsCollapse);
+        Transition transition = new Slide(Gravity.BOTTOM);
+        Transition transition1 = new Slide(Gravity.TOP);
+        if (Basics.getVisibility()== android.view.View.GONE){
+            transition.setDuration(300);
+            transition.addTarget(Basics);
+            androidx.transition.TransitionManager.beginDelayedTransition(Basics, transition);
+            Basics.setVisibility(android.view.ViewGroup.VISIBLE);
+        }
+        else {
+            Basics.setVisibility(android.view.ViewGroup.GONE);
+        }
 
     }
 
     public void VisibilityFruit() {
+        android.view.ViewGroup Basics = findViewById(R.id.FruitCollapse);
+        Transition transition = new Slide(Gravity.BOTTOM);
+        Transition transition1 = new Slide(Gravity.TOP);
+        if (Basics.getVisibility()== android.view.View.GONE){
+            transition.setDuration(300);
+            transition.addTarget(Basics);
+            androidx.transition.TransitionManager.beginDelayedTransition(Basics, transition);
+            Basics.setVisibility(android.view.ViewGroup.VISIBLE);
+        }
+        else {
+            Basics.setVisibility(android.view.ViewGroup.GONE);
+        }
 
     }
 
     public void VisibilityProtein() {
+        android.view.ViewGroup Basics = findViewById(R.id.ProteinCollapse);
+        Transition transition = new Slide(Gravity.BOTTOM);
+        Transition transition1 = new Slide(Gravity.TOP);
+        if (Basics.getVisibility()== android.view.View.GONE){
+            transition.setDuration(300);
+            transition.addTarget(Basics);
+            androidx.transition.TransitionManager.beginDelayedTransition(Basics, transition);
+            Basics.setVisibility(android.view.ViewGroup.VISIBLE);
+        }
+        else {
+            Basics.setVisibility(android.view.ViewGroup.GONE);
+        }
 
     }
 
     public void VisibilityVegetables() {
+        android.view.ViewGroup Basics = findViewById(R.id.VegetableCollapse);
+        Transition transition = new Slide(Gravity.BOTTOM);
+        Transition transition1 = new Slide(Gravity.TOP);
+        if (Basics.getVisibility()== android.view.View.GONE){
+            transition.setDuration(300);
+            transition.addTarget(Basics);
+            androidx.transition.TransitionManager.beginDelayedTransition(Basics, transition);
+            Basics.setVisibility(android.view.ViewGroup.VISIBLE);
+        }
+        else {
+            Basics.setVisibility(android.view.ViewGroup.GONE);
+        }
 
     }
 
