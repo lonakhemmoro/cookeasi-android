@@ -9,6 +9,8 @@ import android.widget.Button;
 import android.widget.ImageButton;
 import androidx.transition.Transition;
 import android.view.Gravity;
+import android.widget.Toast;
+
 public class AddFridgeActivity extends AppCompatActivity {
 
     //each button is broken down into respective catagories
@@ -30,11 +32,17 @@ private Button backtoFridge, BackToMenu;
 //view groups for the collapsing tables
 private android.view.ViewGroup BasicsVG, GrainsVG,VegetablesVG,ProteinVG,FruitVG;
 
+private FridgeItinerary fridgeItinerary;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         //dont mess w this line, connects the xml to the java
         setContentView(R.layout.activity_add_fridge);
+
+        //retrieve instance of FridgeIteinerary
+        fridgeItinerary = FridgeItinerary.getInstance();
+
 //these are linking the image buttons to the variables
         CBasics = (ImageButton) findViewById(com.cookeasibenny.R.id.BasicsCollapsebtn);
         CGrains = (ImageButton) findViewById(com.cookeasibenny.R.id.GrainsCollapsebtn);
@@ -136,125 +144,173 @@ private android.view.ViewGroup BasicsVG, GrainsVG,VegetablesVG,ProteinVG,FruitVG
         milk.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+                fridgeItinerary.addIngredient("milk", true);
+                Toast.makeText(AddFridgeActivity.this, "milk added to fridge", Toast.LENGTH_SHORT).show();
             }
         });
 
         cinnamon.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+                fridgeItinerary.addIngredient("cinnamon", true);
+                Toast.makeText(AddFridgeActivity.this, "cinnamon added to fridge", Toast.LENGTH_SHORT).show();
             }
         });
 
         mayo.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+                fridgeItinerary.addIngredient("mayo", true);
+                Toast.makeText(AddFridgeActivity.this, "mayo added to fridge", Toast.LENGTH_SHORT).show();
             }
         });
 
         brownSugar.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+                fridgeItinerary.addIngredient("brown sugar", true);
+                Toast.makeText(AddFridgeActivity.this, "brown sugar added to fridge", Toast.LENGTH_SHORT).show();
             }
         });
 
         bakingPowder.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+                fridgeItinerary.addIngredient("baking powder", true);
+                Toast.makeText(AddFridgeActivity.this, "baking powder added to fridge", Toast.LENGTH_SHORT).show();
             }
         });
 
         vanilla.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+                fridgeItinerary.addIngredient("vanilla", true);
+                Toast.makeText(AddFridgeActivity.this, "vanilla added to fridge", Toast.LENGTH_SHORT).show();
             }
         });
         butter.setOnClickListener(new View.OnClickListener() {
             public void onClick(View view) {
+                fridgeItinerary.addIngredient("butter", true);
+                Toast.makeText(AddFridgeActivity.this, "butter added to fridge", Toast.LENGTH_SHORT).show();
             }
         });
 
         chili.setOnClickListener(new View.OnClickListener() {
             public void onClick(View view) {
+                fridgeItinerary.addIngredient("chili powder", true);
+                Toast.makeText(AddFridgeActivity.this, "chili powder added to fridge", Toast.LENGTH_SHORT).show();
             }
         });
 
         egg.setOnClickListener(new View.OnClickListener() {
             public void onClick(View view) {
+                fridgeItinerary.addIngredient("egg", true);
+                Toast.makeText(AddFridgeActivity.this, "egg added to fridge", Toast.LENGTH_SHORT).show();
             }
         });
 
         pepper.setOnClickListener(new View.OnClickListener() {
             public void onClick(View view) {
+                fridgeItinerary.addIngredient("pepper", true);
+                Toast.makeText(AddFridgeActivity.this, "pepper added to fridge", Toast.LENGTH_SHORT).show();
             }
         });
 
         cilantro.setOnClickListener(new View.OnClickListener() {
             public void onClick(View view) {
+                fridgeItinerary.addIngredient("cilantro", true);
+                Toast.makeText(AddFridgeActivity.this, "cilantro added to fridge", Toast.LENGTH_SHORT).show();
             }
         });
 
         flour.setOnClickListener(new View.OnClickListener() {
             public void onClick(View view) {
+                fridgeItinerary.addIngredient("flour", true);
+                Toast.makeText(AddFridgeActivity.this, "flour added to fridge", Toast.LENGTH_SHORT).show();
             }
         });
 
         honey.setOnClickListener(new View.OnClickListener() {
             public void onClick(View view) {
+                fridgeItinerary.addIngredient("honey", true);
+                Toast.makeText(AddFridgeActivity.this, "honey added to fridge", Toast.LENGTH_SHORT).show();
             }
         });
 
         chiliF.setOnClickListener(new View.OnClickListener() {
             public void onClick(View view) {
+                fridgeItinerary.addIngredient("chili flakes", true);
+                Toast.makeText(AddFridgeActivity.this, "chili flakes added to fridge", Toast.LENGTH_SHORT).show();
             }
         });
 
         salt.setOnClickListener(new View.OnClickListener() {
             public void onClick(View view) {
+                fridgeItinerary.addIngredient("salt", true);
+                Toast.makeText(AddFridgeActivity.this, "salt added to fridge", Toast.LENGTH_SHORT).show();
             }
         });
 
         cumin.setOnClickListener(new View.OnClickListener() {
             public void onClick(View view) {
+                fridgeItinerary.addIngredient("cumin", true);
+                Toast.makeText(AddFridgeActivity.this, "cumin added to fridge", Toast.LENGTH_SHORT).show();
             }
         });
 
         pbutter.setOnClickListener(new View.OnClickListener() {
             public void onClick(View view) {
+                fridgeItinerary.addIngredient("peanut butter", true);
+                Toast.makeText(AddFridgeActivity.this, "peanut butter added to fridge", Toast.LENGTH_SHORT).show();
             }
         });
 
         soysauce.setOnClickListener(new View.OnClickListener() {
             public void onClick(View view) {
+                fridgeItinerary.addIngredient("soy sauce", true);
+                Toast.makeText(AddFridgeActivity.this, "soy sauce added to fridge", Toast.LENGTH_SHORT).show();
             }
         });
 
         sugar.setOnClickListener(new View.OnClickListener() {
             public void onClick(View view) {
+                fridgeItinerary.addIngredient("sugar", true);
+                Toast.makeText(AddFridgeActivity.this, "sugar added to fridge", Toast.LENGTH_SHORT).show();
             }
         });
 
         vinagrette.setOnClickListener(new View.OnClickListener() {
             public void onClick(View view) {
+                fridgeItinerary.addIngredient("vinagrette dressing", true);
+                Toast.makeText(AddFridgeActivity.this, "vinagrette dressing added to fridge", Toast.LENGTH_SHORT).show();
             }
         });
 
         broth.setOnClickListener(new View.OnClickListener() {
             public void onClick(View view) {
+                fridgeItinerary.addIngredient("broth", true);
+                Toast.makeText(AddFridgeActivity.this, "broth added to fridge", Toast.LENGTH_SHORT).show();
             }
         });
 
         oregano.setOnClickListener(new View.OnClickListener() {
             public void onClick(View view) {
+                fridgeItinerary.addIngredient("oregano", true);
+                Toast.makeText(AddFridgeActivity.this, "oregano added to fridge", Toast.LENGTH_SHORT).show();
             }
         });
 
         basil.setOnClickListener(new View.OnClickListener() {
             public void onClick(View view) {
+                fridgeItinerary.addIngredient("basil", true);
+                Toast.makeText(AddFridgeActivity.this, "basil added to fridge", Toast.LENGTH_SHORT).show();
             }
         });
 
         oliveoil.setOnClickListener(new View.OnClickListener() {
             public void onClick(View view) {
+                fridgeItinerary.addIngredient("olive oil", true);
+                Toast.makeText(AddFridgeActivity.this, "olive oil added to fridge", Toast.LENGTH_SHORT).show();
             }
         });
 
@@ -262,72 +318,96 @@ private android.view.ViewGroup BasicsVG, GrainsVG,VegetablesVG,ProteinVG,FruitVG
         bread.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+                fridgeItinerary.addIngredient("bread", true);
+                Toast.makeText(AddFridgeActivity.this, "bread added to fridge", Toast.LENGTH_SHORT).show();
             }
         });
 
         oats.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+                fridgeItinerary.addIngredient("oats", true);
+                Toast.makeText(AddFridgeActivity.this, "oats added to fridge", Toast.LENGTH_SHORT).show();
             }
         });
 
         grits.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+                fridgeItinerary.addIngredient("grits", true);
+                Toast.makeText(AddFridgeActivity.this, "grits added to fridge", Toast.LENGTH_SHORT).show();
             }
         });
 
         barley.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+                fridgeItinerary.addIngredient("barley", true);
+                Toast.makeText(AddFridgeActivity.this, "barley added to fridge", Toast.LENGTH_SHORT).show();
             }
         });
 
         risotto.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+                fridgeItinerary.addIngredient("risotto", true);
+                Toast.makeText(AddFridgeActivity.this, "risotto added to fridge", Toast.LENGTH_SHORT).show();
             }
         });
 
         puffPastry.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+                fridgeItinerary.addIngredient("puff pastry", true);
+                Toast.makeText(AddFridgeActivity.this, "puff pastry added to fridge", Toast.LENGTH_SHORT).show();
             }
         });
 
         toast.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+                fridgeItinerary.addIngredient("toast", true);
+                Toast.makeText(AddFridgeActivity.this, "toast added to fridge", Toast.LENGTH_SHORT).show();
             }
         });
 
         wholeGrainWrap.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+                fridgeItinerary.addIngredient("whole grain wrap", true);
+                Toast.makeText(AddFridgeActivity.this, "whole grain wrap added to fridge", Toast.LENGTH_SHORT).show();
             }
         });
 
         spaghetti.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+                fridgeItinerary.addIngredient("spaghetti", true);
+                Toast.makeText(AddFridgeActivity.this, "spaghetti added to fridge", Toast.LENGTH_SHORT).show();
             }
         });
 
         granola.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+                fridgeItinerary.addIngredient("granola", true);
+                Toast.makeText(AddFridgeActivity.this, "granola added to fridge", Toast.LENGTH_SHORT).show();
             }
         });
 
         rice.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+                fridgeItinerary.addIngredient("rice", true);
+                Toast.makeText(AddFridgeActivity.this, "rice added to fridge", Toast.LENGTH_SHORT).show();
             }
         });
 
         quinoa.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+                fridgeItinerary.addIngredient("quinoa", true);
+                Toast.makeText(AddFridgeActivity.this, "quinoa added to fridge", Toast.LENGTH_SHORT).show();
             }
         });
 
@@ -335,96 +415,128 @@ private android.view.ViewGroup BasicsVG, GrainsVG,VegetablesVG,ProteinVG,FruitVG
         lime.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+                fridgeItinerary.addIngredient("lime", true);
+                Toast.makeText(AddFridgeActivity.this, "lime added to fridge", Toast.LENGTH_SHORT).show();
             }
         });
 
         cucumber.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+                fridgeItinerary.addIngredient("cucumber", true);
+                Toast.makeText(AddFridgeActivity.this, "cucumber added to fridge", Toast.LENGTH_SHORT).show();
             }
         });
 
         avocado.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+                fridgeItinerary.addIngredient("avocado", true);
+                Toast.makeText(AddFridgeActivity.this, "avocado added to fridge", Toast.LENGTH_SHORT).show();
             }
         });
 
         onion.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+                fridgeItinerary.addIngredient("onion", true);
+                Toast.makeText(AddFridgeActivity.this, "onion added to fridge", Toast.LENGTH_SHORT).show();
             }
         });
 
         carrot.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+                fridgeItinerary.addIngredient("carrot", true);
+                Toast.makeText(AddFridgeActivity.this, "carrot added to fridge", Toast.LENGTH_SHORT).show();
             }
         });
 
         veggieMix.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+                fridgeItinerary.addIngredient("vegetables mixed", true);
+                Toast.makeText(AddFridgeActivity.this, "vegetables mixed added to fridge", Toast.LENGTH_SHORT).show();
             }
         });
 
         celery.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+                fridgeItinerary.addIngredient("celery", true);
+                Toast.makeText(AddFridgeActivity.this, "celery added to fridge", Toast.LENGTH_SHORT).show();
             }
         });
 
         driedLentils.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+                fridgeItinerary.addIngredient("dried lentils", true);
+                Toast.makeText(AddFridgeActivity.this, "dried lentils added to fridge", Toast.LENGTH_SHORT).show();
             }
         });
 
         tomato.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+                fridgeItinerary.addIngredient("tomato", true);
+                Toast.makeText(AddFridgeActivity.this, "tomato added to fridge", Toast.LENGTH_SHORT).show();
             }
         });
 
         cannedTomatoes.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+                fridgeItinerary.addIngredient("canned tomatoes", true);
+                Toast.makeText(AddFridgeActivity.this, "canned tomatoes added to fridge", Toast.LENGTH_SHORT).show();
             }
         });
 
         bellPepper.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+                fridgeItinerary.addIngredient("bell pepper", true);
+                Toast.makeText(AddFridgeActivity.this, "bell pepper added to fridge", Toast.LENGTH_SHORT).show();
             }
         });
 
         blackBeans.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+                fridgeItinerary.addIngredient("black beans", true);
+                Toast.makeText(AddFridgeActivity.this, "black beans added to fridge", Toast.LENGTH_SHORT).show();
             }
         });
 
         potato.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+                fridgeItinerary.addIngredient("potato", true);
+                Toast.makeText(AddFridgeActivity.this, "potato added to fridge", Toast.LENGTH_SHORT).show();
             }
         });
 
         ginger.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+                fridgeItinerary.addIngredient("ginger", true);
+                Toast.makeText(AddFridgeActivity.this, "ginger added to fridge", Toast.LENGTH_SHORT).show();
             }
         });
 
         garlic.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+                fridgeItinerary.addIngredient("garlic", true);
+                Toast.makeText(AddFridgeActivity.this, "garlic added to fridge", Toast.LENGTH_SHORT).show();
             }
         });
 
         lettuce.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+                fridgeItinerary.addIngredient("lettuce", true);
+                Toast.makeText(AddFridgeActivity.this, "lettuce added to fridge", Toast.LENGTH_SHORT).show();
             }
         });
 
@@ -432,42 +544,56 @@ private android.view.ViewGroup BasicsVG, GrainsVG,VegetablesVG,ProteinVG,FruitVG
         greekYogurt.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+                fridgeItinerary.addIngredient("greek yogurt", true);
+                Toast.makeText(AddFridgeActivity.this, "greek yogurt added to fridge", Toast.LENGTH_SHORT).show();
             }
         });
 
         cheese.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+                fridgeItinerary.addIngredient("cheese", true);
+                Toast.makeText(AddFridgeActivity.this, "cheese added to fridge", Toast.LENGTH_SHORT).show();
             }
         });
 
         chicken.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+                fridgeItinerary.addIngredient("chicken", true);
+                Toast.makeText(AddFridgeActivity.this, "chicken added to fridge", Toast.LENGTH_SHORT).show();
             }
         });
 
         almondMilk.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+                fridgeItinerary.addIngredient("almond milk", true);
+                Toast.makeText(AddFridgeActivity.this, "almond milk added to fridge", Toast.LENGTH_SHORT).show();
             }
         });
 
         hummus.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+                fridgeItinerary.addIngredient("hummus", true);
+                Toast.makeText(AddFridgeActivity.this, "hummus added to fridge", Toast.LENGTH_SHORT).show();
             }
         });
 
         salmon.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+                fridgeItinerary.addIngredient("salmon", true);
+                Toast.makeText(AddFridgeActivity.this, "salmon added to fridge", Toast.LENGTH_SHORT).show();
             }
         });
 
         groundBeef.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+                fridgeItinerary.addIngredient("ground beef", true);
+                Toast.makeText(AddFridgeActivity.this, "ground beef added to fridge", Toast.LENGTH_SHORT).show();
             }
         });
 
@@ -475,12 +601,16 @@ private android.view.ViewGroup BasicsVG, GrainsVG,VegetablesVG,ProteinVG,FruitVG
         frzbanana.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+                fridgeItinerary.addIngredient("frozen banana", true);
+                Toast.makeText(AddFridgeActivity.this, "frozen banana added to fridge", Toast.LENGTH_SHORT).show();
             }
         });
 
         frzberries.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+                fridgeItinerary.addIngredient("frozen berries", true);
+                Toast.makeText(AddFridgeActivity.this, "frozen berries added to fridge", Toast.LENGTH_SHORT).show();
             }
         });
 

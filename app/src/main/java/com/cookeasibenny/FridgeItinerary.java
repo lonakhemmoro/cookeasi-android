@@ -4,30 +4,39 @@ import java.util.HashMap;
 import java.util.Map;
 
 public class FridgeItinerary {
+
+    private static FridgeItinerary instance;
     public static Map<String, Ingredient> FridgeContents = new HashMap<>();
 
-    public static void addIngredient(String name) {
+    public static FridgeItinerary getInstance() {
+        if (instance == null) {
+            instance = new FridgeItinerary();
+        }
+        return instance;
+    }
+
+    public void addIngredient(String name) {
         Ingredient ingred = new Ingredient(name);
         FridgeContents.put(name.toLowerCase(), ingred);
     }
 
-    public static void addIngredient(String name, boolean inStock) {
+    public void addIngredient(String name, boolean inStock) {
         Ingredient ingred = new Ingredient(name, inStock);
         FridgeContents.put(name.toLowerCase(), ingred);
     }
 
-    public static void removeIngredient(String name) {
+    public void removeIngredient(String name) {
         FridgeContents.remove(name.toLowerCase());
     }
 
-    public static void setInStock(String name, boolean inStock) {
+    public void setInStock(String name, boolean inStock) {
         Ingredient ingred = FridgeContents.get(name.toLowerCase());
         if (ingred != null) {
             ingred.setInStock(inStock);
         }
     }
 
-    public static void printItinerary() {
+    public void printItinerary() {
         System.out.println("Ingredient Itinerary:");
         System.out.println("---------------------");
         for (Ingredient ingred : FridgeContents.values()) {
@@ -35,7 +44,7 @@ public class FridgeItinerary {
         }
     }
 
-    public static String getInStockIngredients() {
+    public String getInStockIngredients() {
         StringBuilder sb = new StringBuilder();
         for (Ingredient ingredient : FridgeContents.values()) {
             if (ingredient.getInStock()) {
