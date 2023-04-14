@@ -1,10 +1,11 @@
-/*package com.cookeasibenny;
+package com.cookeasibenny;
+
+import org.json.JSONArray;
+import org.json.JSONException;
+import org.json.JSONObject;
 
 import java.util.ArrayList;
 import java.util.List;
-
-import org.json.JSONArray;
-import org.json.JSONObject;
 
 public class InstructionStep {
     private String step;
@@ -25,22 +26,26 @@ public class InstructionStep {
 
     public static List<InstructionStep> parseJSON(String jsonString) {
         List<InstructionStep> steps = new ArrayList<>();
-        JSONArray stepsArray = new JSONArray(jsonString);
-        for (int i = 0; i < stepsArray.length(); i++) {
-            JSONObject stepObject = stepsArray.getJSONObject(i);
-            JSONArray stepArray = stepObject.getJSONArray("steps");
-            for (int j = 0; j < stepArray.length(); j++) {
-                JSONObject stepData = stepArray.getJSONObject(j);
-                String stepText = stepData.getString("step");
-                JSONArray ingredientArray = stepData.getJSONArray("ingredients");
-                List<String> ingredientList = new ArrayList<>();
-                for (int k = 0; k < ingredientArray.length(); k++) {
-                    JSONObject ingredientData = ingredientArray.getJSONObject(k);
-                    String ingredientName = ingredientData.getString("name");
-                    ingredientList.add(ingredientName);
+        try {
+            JSONArray stepsArray = new JSONArray(jsonString);
+            for (int i = 0; i < stepsArray.length(); i++) {
+                JSONObject stepObject = stepsArray.getJSONObject(i);
+                JSONArray stepArray = stepObject.getJSONArray("steps");
+                for (int j = 0; j < stepArray.length(); j++) {
+                    JSONObject stepData = stepArray.getJSONObject(j);
+                    String stepText = stepData.getString("step");
+                    JSONArray ingredientArray = stepData.getJSONArray("ingredients");
+                    List<String> ingredientList = new ArrayList<>();
+                    for (int k = 0; k < ingredientArray.length(); k++) {
+                        JSONObject ingredientData = ingredientArray.getJSONObject(k);
+                        String ingredientName = ingredientData.getString("name");
+                        ingredientList.add(ingredientName);
+                    }
+                    steps.add(new InstructionStep(stepText, ingredientList));
                 }
-                steps.add(new InstructionStep(stepText, ingredientList));
             }
+        } catch (JSONException e) {
+            // Handle the exception here, such as logging the error or returning an empty list
         }
         return steps;
     }
@@ -57,8 +62,7 @@ for (InstructionStep step : steps) {
  */
 
 //example output
-/*
-Step 1: Preheat the oven to 200 degrees F.
+/*Step 1: Preheat the oven to 200 degrees F.
 
 Equipment: oven
 Temperature: 200.0 Fahrenheit
