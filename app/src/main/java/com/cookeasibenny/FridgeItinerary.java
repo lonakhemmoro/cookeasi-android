@@ -53,7 +53,7 @@ public class FridgeItinerary {
         }
     }
 
-    public String getInStockIngredients() {
+    public static String getInStockIngredients() {
         StringBuilder sb = new StringBuilder();
         for (Ingredient ingredient : FridgeContents.values()) {
             if (ingredient.getInStock()) {
