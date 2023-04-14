@@ -29,6 +29,10 @@ public class FridgeItinerary {
         FridgeContents.remove(name.toLowerCase());
     }
 
+    public void removeAllIngredients() {
+        FridgeContents.clear();
+    }
+
     public void setInStock(String name, boolean inStock) {
         Ingredient ingred = FridgeContents.get(name.toLowerCase());
         if (ingred != null) {
