@@ -8,13 +8,12 @@
 
     <TextView
         android:id="@+id/AboutText"
-        android:layout_width="148dp"
-        android:layout_height="88dp"
-        android:layout_marginBottom="432dp"
+        android:layout_width="283dp"
+        android:layout_height="121dp"
+        android:layout_marginBottom="372dp"
         android:text="This is where we put the string for information about ourselves"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.498"
         app:layout_constraintStart_toStartOf="parent" />
 
     <Button
@@ -25,5 +24,6 @@
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.79" />
 </androidx.constraintlayout.widget.ConstraintLayout>
