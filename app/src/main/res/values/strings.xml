@@ -1,7 +1,12 @@
 <resources>
     <string name="app_name"></string>
     <string name="test">testing!!</string>
-
+    <string name="about_page">
+    Welcome to cookeasi!
+    Not everyone is a chef, looking at a fridge and deducing recipes is not a skill most people have.
+        Hence, cookeasi. The app which conveniently takes items from your fridge and displays all the recipes possible with them.
+        Cookeasi aims to save any unnecessary shopping, orders to restaurants, and even expand the horizons of ones own cooking journey.
+    </string>
     <string name="recipe_example">
 2 eggs<br />
 Salt and pepper<br />
@@ -47,7 +52,7 @@ red pepper flakes<br />
   6. Serve immediately and enjoy!
 </p>
     </string>
-    
+
     <string name="peanut_butter_banana_smoothie">
         frozen banana<br />
         almond milk<br />
@@ -62,7 +67,7 @@ red pepper flakes<br />
   5. Enjoy your delicious and healthy smoothie!
 </p>
     </string>
-    
+
     <string name="grilled_chicken_salad">
         chicken breast<br />
         salt<br />
@@ -83,7 +88,7 @@ red pepper flakes<br />
   8. Serve immediately and enjoy!
 </p>
     </string>
-    
+
     <string name="veggie_wrap">
         whole grain wrap<br />
         hummus<br />
@@ -101,7 +106,7 @@ red pepper flakes<br />
   7. Serve immediately and enjoy your delicious veggie wrap!
 </p>
     </string>
-    
+
     <string name="lentil_soup">
         olive oil<br />
         onion<br />
@@ -125,7 +130,7 @@ red pepper flakes<br />
     7. Serve the soup hot and enjoy!
 </p>
     </string>
-    
+
     <string name="baked_salmon">
         salmon<br />
         salt<br />
@@ -145,7 +150,7 @@ red pepper flakes<br />
   7. Serve the salmon hot and enjoy!<br />
 </p>
     </string>
-    
+
     <string name="spaghetti_bolognese">
         spaghetti<br />
         olive oil<br />
@@ -169,7 +174,7 @@ red pepper flakes<br />
   9. Enjoy your delicious spaghetti bolognese!<br />
 </p>
     </string>
-    
+
     <string name="quinoa_and_black_bean">
         quinoa<br />
         black beans<br />

@@ -44,6 +44,7 @@ private void ExampleList(){
     items.add(new itemRecipe(com.cookeasibenny.R.drawable.fridge_image_svg, "S","the best test ever"));
     items.add(new itemRecipe(com.cookeasibenny.R.drawable.fridge_image_svg, "T","the best test ever"));
 }
+
     private void initSearchWidget(){
         SearchView searchview = (SearchView)  findViewById(com.cookeasibenny.R.id.SearchView);
         searchview.setOnQueryTextListener(new SearchView.OnQueryTextListener(){
@@ -71,4 +72,5 @@ private void ExampleList(){
                 return false;
             }
         });
+
 }}

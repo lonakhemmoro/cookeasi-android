@@ -31,6 +31,7 @@ public class AdapterRecipe extends RecyclerView.Adapter<ViewHolderRecipe> {
         holder.textView1.setText(items.get(position).getTitle());
         holder.textView2.setText(items.get(position).getSubtext());
         holder.imageView1.setImageResource(items.get(position).getImage());
+        holder.MakeItBtn1.setText(items.get(position).getRecipeString());
     }
 
     @Override
