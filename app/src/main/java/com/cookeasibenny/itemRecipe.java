@@ -12,7 +12,7 @@ public class itemRecipe {
         this.Image = Image;
         this.Title = Title;
         this.Subtext = Subtext;
-        this.RecipeString = RecipeString;
+
     }
 
     public int getImage() {
@@ -27,6 +27,5 @@ public class itemRecipe {
         return Subtext;
     }
 
-    public String getRecipeString(){return RecipeString;}
 
 }

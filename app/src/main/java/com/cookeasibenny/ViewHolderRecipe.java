@@ -22,7 +22,13 @@ public class ViewHolderRecipe extends RecyclerView.ViewHolder {
         textView2 = itemView.findViewById(com.cookeasibenny.R.id.subheaderReicpe);
         MakeItBtn1 = itemView.findViewById(com.cookeasibenny.R.id.MakeItBtn);
         Directions = itemView.findViewById(com.cookeasibenny.R.id.Directions);
+MakeItBtn1.setOnClickListener(new android.view.View.OnClickListener(){
 
+    @Override
+    public void onClick(android.view.View v) {
+        OnclickRecipePage();
+    }
+});
       textView1.setOnClickListener(new android.view.View.OnClickListener() {
           @Override
           public void onClick(android.view.View v) {
@@ -36,6 +42,7 @@ public class ViewHolderRecipe extends RecyclerView.ViewHolder {
     public void OnclickRecipePage() {
         android.content.Intent openRecipeIntent = new android.content.Intent(itemView.getContext(), RecipePage1.class);
         openRecipeIntent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
+        openRecipeIntent.putExtra("recipe_name", String.valueOf(textView1));
         itemView.getContext().startActivity(openRecipeIntent);
     }
 
