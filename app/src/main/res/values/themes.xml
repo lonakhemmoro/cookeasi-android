@@ -17,4 +17,13 @@
         <item name="android:textColor">@color/white</item>
 
     </style>
+
+    <style name="MySearchViewTheme" parent="Theme.AppCompat.Light.DarkActionBar">
+        <item name="colorControlNormal">#FF9900</item>
+        <item name="colorControlActivated">@color/lime</item>
+        <item name="colorPrimary">#8BC34A</item>
+        <item name="android:background">@color/white</item>
+        <item name="android:statusBarColor">@color/orange</item>
+        <item name="colorOnPrimary">@color/black</item>
+    </style>
 </resources>

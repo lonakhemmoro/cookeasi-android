@@ -15,17 +15,20 @@
 
         <SearchView
             android:id="@+id/SearchView"
-            android:queryHint="search for recipe"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content">
+            android:layout_height="wrap_content"
+            android:queryHint="search for recipe"
+            android:theme="@style/MySearchViewTheme"
+            android:padding="10dp"
+            android:searchIcon="@drawable/searchicon2">
 
             <EditText
                 android:id="@+id/SearchBoxRecipes"
                 android:layout_width="match_parent"
-                android:layout_height="80dp"
-                android:backgroundTint="@color/white"
+                android:layout_height="50dp"
                 android:text="search"
-                android:textColor="@color/white" />
+                android:textColor="@color/black"
+                android:theme="@style/MySearchViewTheme"/>
         </SearchView>
 
         <androidx.recyclerview.widget.RecyclerView
