@@ -50,16 +50,18 @@
                 android:id="@+id/BackToMenu"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_weight="1"
                 android:layout_margin="10dp"
+                android:layout_weight="1"
+                android:backgroundTint="@color/accentOrange"
                 android:text="Back To Menu" />
 
             <Button
                 android:id="@+id/GoToFridge"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_weight="1"
                 android:layout_margin="10dp"
+                android:layout_weight="1"
+                android:backgroundTint="@color/accentOrange"
                 android:text="Go to Fridge" />
         </LinearLayout>
 
