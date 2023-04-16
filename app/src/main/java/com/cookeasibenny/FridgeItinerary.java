@@ -26,7 +26,12 @@ public class FridgeItinerary {
     }
 
     public void removeIngredient(String name) {
-        FridgeContents.remove(name.toLowerCase());
+        for (String ingredientName : FridgeContents.keySet()) {
+            if (ingredientName.equalsIgnoreCase(name)) {
+                FridgeContents.remove(ingredientName);
+                break;
+            }
+        }
     }
 
     public void removeAllIngredients() {

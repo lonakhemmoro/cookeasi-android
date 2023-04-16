@@ -16,6 +16,7 @@ ImageView RecipePicture;
         setContentView(com.cookeasibenny.R.layout.recipepagelayout);
         String recipeName;
         recipeName = getIntent().getStringExtra("recipe_name");
+        String ingredientName = getIntent().getStringExtra("ingredientName");
 
         RecipePicture  = (ImageView) findViewById(com.cookeasibenny.R.id.RecipePagePicture);
         ContentRecipe = (TextView) findViewById(com.cookeasibenny.R.id.Directions);

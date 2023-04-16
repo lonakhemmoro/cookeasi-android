@@ -48,13 +48,14 @@ initSearchWidget();
             public void onClick(android.view.View v, int position) {
                 Intent intent = new Intent(getApplicationContext(),RecipePage1.class);
                 intent.putExtra("recipe_name",items.get(position).getSubtext());
+                intent.putExtra("ingredientName", items.get(position).getImage());
                 startActivity(intent);
             }
         };
     }
 
     public void ExampleList(){
-    items.add(new itemRecipe(com.cookeasibenny.R.drawable.fridge_image_svg, "R","the best test ever"));
+    items.add(new itemRecipe(com.cookeasibenny.R.string.recipe_example, "Veggie Wrap",getResources().getString(com.cookeasibenny.R.string.veggie_wrap)));
     items.add(new itemRecipe(com.cookeasibenny.R.drawable.fridge_image_svg, "S","the best test ever"));
     items.add(new itemRecipe(com.cookeasibenny.R.drawable.fridge_image_svg, "T","the best test ever"));
 }
