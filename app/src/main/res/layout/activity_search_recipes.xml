@@ -31,7 +31,7 @@
         <androidx.recyclerview.widget.RecyclerView
             android:id="@+id/searchRecycler"
             android:layout_width="405dp"
-            android:layout_height="469dp"
+            android:layout_height="442dp"
 
 
             >
@@ -48,14 +48,16 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
-                android:text="Button" />
+                android:layout_margin="10dp"
+                android:text="Back To Menu" />
 
             <Button
                 android:id="@+id/GoToFridge"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
-                android:text="Button" />
+                android:layout_margin="10dp"
+                android:text="Go to Fridge" />
         </LinearLayout>
 
     </LinearLayout>
