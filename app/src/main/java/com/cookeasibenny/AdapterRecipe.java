@@ -7,7 +7,7 @@ import androidx.recyclerview.widget.RecyclerView;
 
 import java.util.List;
 public class AdapterRecipe extends RecyclerView.Adapter<ViewHolderRecipe> {
-    private OnItemClickListener mListener;
+
     Context context;
     List<itemRecipe> items;
     private java.util.List<com.cookeasibenny.itemRecipe> itemList;
@@ -17,9 +17,7 @@ public class AdapterRecipe extends RecyclerView.Adapter<ViewHolderRecipe> {
         this.context = context;
         this.items = items;
     }
-    public void setOnItemClickListener(OnItemClickListener listener) {
-        mListener = listener;
-    }
+
     public static void updatelist(java.util.List<com.cookeasibenny.itemRecipe> filteredList) {
     }
 
