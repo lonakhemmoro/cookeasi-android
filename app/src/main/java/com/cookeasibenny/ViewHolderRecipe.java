@@ -7,42 +7,31 @@ import android.widget.ImageView;
 import android.widget.TextView;
 import android.content.Intent;
 
-public class ViewHolderRecipe extends RecyclerView.ViewHolder {
+public class ViewHolderRecipe extends RecyclerView.ViewHolder implements android.view.View.OnClickListener {
 
     ImageView imageView1;
     TextView textView1;
     TextView textView2;
     Button MakeItBtn1;
-    OnItemClickListener OnItemClickListener;
-    TextView Directions;
+AdapterRecipe.RecyclerViewClickListener listener;
+
+    public void setRecylerViewClickListener(com.cookeasibenny.AdapterRecipe.RecyclerViewClickListener listener) {
+        this.listener = listener;
+    }
+
     public ViewHolderRecipe(android.view.View itemView) {
         super(itemView);
         imageView1 = itemView.findViewById(com.cookeasibenny.R.id.imageView1);
         textView1 = itemView.findViewById(com.cookeasibenny.R.id.Title);
         textView2 = itemView.findViewById(com.cookeasibenny.R.id.subheaderReicpe);
-        MakeItBtn1 = itemView.findViewById(com.cookeasibenny.R.id.MakeItBtn);
-        Directions = itemView.findViewById(com.cookeasibenny.R.id.Directions);
-MakeItBtn1.setOnClickListener(new android.view.View.OnClickListener(){
+        itemView.setOnClickListener(this);
+
+}
 
     @Override
     public void onClick(android.view.View v) {
-        OnclickRecipePage();
+        if (listener != null) {
+            listener.onClick(itemView, getAdapterPosition());
+        }
     }
-});
-      textView1.setOnClickListener(new android.view.View.OnClickListener() {
-          @Override
-          public void onClick(android.view.View v) {
-              OnclickRecipePage();
-          }
-      });
-
-
-    }
-    public void OnclickRecipePage() {
-        android.content.Intent openRecipeIntent = new android.content.Intent(itemView.getContext(), RecipePage1.class);
-        openRecipeIntent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
-        itemView.getContext().startActivity(openRecipeIntent);
-    }
-
-
 }

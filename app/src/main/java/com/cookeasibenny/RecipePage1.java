@@ -20,5 +20,15 @@ ImageView RecipePicture;
         RecipePicture  = (ImageView) findViewById(com.cookeasibenny.R.id.RecipePagePicture);
         ContentRecipe = (TextView) findViewById(com.cookeasibenny.R.id.Directions);
         TitleRecipe = String.valueOf((android.widget.TextView) findViewById(com.cookeasibenny.R.id.RecipePageTitle));
+
+        String titleRecipe1 = "Not set up, put something here chase";
+
+        Bundle extras = getIntent().getExtras();
+
+        if(extras !=null){
+            titleRecipe1 = extras.getString("test this");
+        }
+
+        ContentRecipe.setText(titleRecipe1);
     }
 }
