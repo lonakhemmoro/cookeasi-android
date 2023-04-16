@@ -47,7 +47,7 @@ initSearchWidget();
             @Override
             public void onClick(android.view.View v, int position) {
                 Intent intent = new Intent(getApplicationContext(),RecipePage1.class);
-                intent.putExtra("Username",items.get(position).getSubtext());
+                intent.putExtra("recipe_name",items.get(position).getSubtext());
                 startActivity(intent);
             }
         };
