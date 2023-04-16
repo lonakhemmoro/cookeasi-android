@@ -21,7 +21,7 @@ ImageView RecipePicture;
         ContentRecipe = (TextView) findViewById(com.cookeasibenny.R.id.Directions);
         TitleRecipe = String.valueOf((android.widget.TextView) findViewById(com.cookeasibenny.R.id.RecipePageTitle));
 
-        String titleRecipe1 = "Not set up, put something here chase";
+        String titleRecipe1 = "Not Set up";
 
         Bundle extras = getIntent().getExtras();
 

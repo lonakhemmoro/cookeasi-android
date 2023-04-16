@@ -10,9 +10,6 @@ public class AdapterRecipe extends RecyclerView.Adapter<ViewHolderRecipe> {
 private RecyclerViewClickListener listener;
 
 
-    public AdapterRecipe(RecyclerViewClickListener listener) {
-        listener = listener;
-    }
     Context context;
     List<itemRecipe> items;
     private java.util.List<com.cookeasibenny.itemRecipe> itemList;
@@ -24,12 +21,11 @@ private RecyclerViewClickListener listener;
         this.listener = listener;
     }
 
-    public static void updatelist(java.util.List<com.cookeasibenny.itemRecipe> filteredList) {
-    }
+
 
     @androidx.annotation.NonNull
     public com.cookeasibenny.ViewHolderRecipe onCreateViewHolder(@androidx.annotation.NonNull android.view.ViewGroup parent, int viewType) {
-        return new ViewHolderRecipe(LayoutInflater.from(context).inflate(com.cookeasibenny.R.layout.recipes_itme,parent,false));
+        return new ViewHolderRecipe(LayoutInflater.from(context).inflate(com.cookeasibenny.R.layout.recipes_itme,parent,false),listener);
     }
 
     @Override
