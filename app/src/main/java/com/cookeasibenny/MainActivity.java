@@ -9,7 +9,7 @@ import android.widget.Button;
 
 public class MainActivity extends AppCompatActivity {
 private Button Fridge;
-private Button Recycler;
+
 private Button About;
 private Button FindRecipe;
 
@@ -18,7 +18,6 @@ private Button FindRecipe;
         setContentView(R.layout.activity_main);
 
 Fridge = (Button) findViewById(R.id.MA_OpenFridge);
-Recycler = (Button) findViewById(R.id.RecyclerButtton1);
 About = (Button) findViewById(R.id.MA_About);
 FindRecipe = (Button) findViewById(R.id.MA_FindRecipe);
 Fridge.setOnClickListener(new View.OnClickListener() {
@@ -27,12 +26,7 @@ Fridge.setOnClickListener(new View.OnClickListener() {
         openFridgeMA();
     }
 });
-Recycler.setOnClickListener(new View.OnClickListener(){
 
-    public void onClick(View w){
-        openRecyclerMA();
-    }
-});
 About.setOnClickListener(new View.OnClickListener(){
 
     public void onClick(View w){
