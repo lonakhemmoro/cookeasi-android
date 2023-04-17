@@ -1,10 +1,9 @@
-
 package com.cookeasibenny;
 
-import androidx.recyclerview.widget.RecyclerView;
-import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.TextView;
+
+import androidx.recyclerview.widget.RecyclerView;
 
 public class ViewHolderRecipe extends RecyclerView.ViewHolder implements android.view.View.OnClickListener {
 
