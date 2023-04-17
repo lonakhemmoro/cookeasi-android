@@ -39,9 +39,14 @@ initSearchWidget();
             @Override
             public void onClick(android.view.View v, int position) {
                 Intent intent = new Intent(getApplicationContext(),RecipePage1.class);
-                intent.putExtra("recipe_name",filteredList.get(position).getSubtext());
-                intent.putExtra("ingredientName", filteredList.get(position).getImage());
-                startActivity(intent);
+                if(filteredList.isEmpty()){
+                    intent.putExtra("recipe_name",items.get(position).getSubtext());
+                    startActivity(intent);
+                }
+                else {
+                    intent.putExtra("recipe_name", filteredList.get(position).getSubtext());
+                    startActivity(intent);
+                }
             }
         };
     }
