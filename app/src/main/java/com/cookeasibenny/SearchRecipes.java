@@ -1,21 +1,14 @@
 package com.cookeasibenny;
 
-import static com.cookeasibenny.R.menu.menu;
-
 import android.os.Bundle;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
-import android.view.Menu;
+
 import android.widget.SearchView;
 import java.util.ArrayList;
 import java.util.List;
 import android.content.Intent;
-import android.view.MenuItem;
-import androidx.core.view.MenuItemCompat;
-import androidx.appcompat.widget.SearchView.OnQueryTextListener;
-
-import com.cookeasibenny.R.menu;
 
 public class SearchRecipes extends AppCompatActivity  {
     List<itemRecipe> items = new ArrayList<itemRecipe>();
@@ -35,10 +28,9 @@ public class SearchRecipes extends AppCompatActivity  {
 
 
 SetOnClick();
-
         RecyclerView recyclerView = findViewById(com.cookeasibenny.R.id.searchRecycler);
         recyclerView.setLayoutManager(new LinearLayoutManager(this));
-        recyclerView.setAdapter(new AdapterRecipe(getApplicationContext(),items,listener));
+        recyclerView.setAdapter(new AdapterRecipe(getApplicationContext(),items,filteredList,listener));
 initSearchWidget();
     }
 
@@ -47,8 +39,8 @@ initSearchWidget();
             @Override
             public void onClick(android.view.View v, int position) {
                 Intent intent = new Intent(getApplicationContext(),RecipePage1.class);
-                intent.putExtra("recipe_name",items.get(position).getSubtext());
-                intent.putExtra("ingredientName", items.get(position).getImage());
+                intent.putExtra("recipe_name",filteredList.get(position).getSubtext());
+                intent.putExtra("ingredientName", filteredList.get(position).getImage());
                 startActivity(intent);
             }
         };
@@ -87,9 +79,10 @@ initSearchWidget();
                     }
                 }
 
-                AdapterRecipe itemAdapter = new AdapterRecipe(getApplicationContext(),filteredList, listener);
+                AdapterRecipe itemAdapter = new AdapterRecipe(getApplicationContext(),filteredList, items, listener);
                 RecyclerView recyclerView = findViewById(com.cookeasibenny.R.id.searchRecycler);
                 recyclerView.setAdapter(itemAdapter);
+
                 return false;
             }
         });

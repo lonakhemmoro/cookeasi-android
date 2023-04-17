@@ -12,13 +12,16 @@ private RecyclerViewClickListener listener;
 
     Context context;
     List<itemRecipe> items;
+    List<itemRecipe> filteredList;
     private java.util.List<com.cookeasibenny.itemRecipe> itemList;
 
 
-    public AdapterRecipe(android.content.Context context, java.util.List<itemRecipe> items, RecyclerViewClickListener listener) {
+    public AdapterRecipe(android.content.Context context, java.util.List<com.cookeasibenny.itemRecipe> items, java.util.List<itemRecipe> filteredList, com.cookeasibenny.AdapterRecipe.RecyclerViewClickListener listener) {
         this.context = context;
         this.items = items;
+        this.itemList = itemList;
         this.listener = listener;
+        this.filteredList = filteredList;
     }
 
 
@@ -34,7 +37,6 @@ private RecyclerViewClickListener listener;
         holder.textView2.setText(items.get(position).getSubtext());
         holder.imageView1.setImageResource(items.get(position).getImage());
 
-
     }
 
     @Override
@@ -42,10 +44,13 @@ private RecyclerViewClickListener listener;
          return items.size();
     }
     public void updateList(List<itemRecipe> itemList) {
-        this.itemList = itemList;
+        this.itemList.clear();
+        this.itemList.addAll(itemList);
         notifyDataSetChanged();
     }
 public interface RecyclerViewClickListener{
         void onClick(android.view.View v, int position);
 }
+
+
 }
