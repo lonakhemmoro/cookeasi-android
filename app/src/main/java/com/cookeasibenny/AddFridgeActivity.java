@@ -10,7 +10,7 @@ import android.widget.ImageButton;
 import androidx.transition.Transition;
 import android.view.Gravity;
 import android.widget.Toast;
-
+import android.content.Intent;
 public class AddFridgeActivity extends AppCompatActivity {
 
     //each button is broken down into respective catagories
@@ -53,6 +53,22 @@ private FridgeItinerary fridgeItinerary;
         BasicsVG = findViewById(com.cookeasibenny.R.id.BasicsCollapse);
         BasicsVG.setVisibility(android.view.View.GONE);
         //^ do this for all view groups pls
+
+        backtoFridge = (Button) findViewById(com.cookeasibenny.R.id.AddF_backFridge);
+        BackToMenu = (Button) findViewById(com.cookeasibenny.R.id.AddF_BackMenu);
+
+        //onclick listeners for bottom navigation
+        backtoFridge.setOnClickListener(new View.OnClickListener(){
+            public void onClick(View x){
+            BackFridge();
+            }
+        });
+
+        BackToMenu.setOnClickListener(new View.OnClickListener(){
+            public void onClick(View x){
+            BackMenu();
+            }
+        });
 
         // onclick listeners for nav bar
         CBasics.setOnClickListener( new View.OnClickListener(){
@@ -616,7 +632,18 @@ private FridgeItinerary fridgeItinerary;
 
         //add food buttons above.
     }
-//public voids for visiiblity of food groups for buttons
+
+    private void BackMenu() {
+        Intent intent = new Intent(this, MainActivity.class);
+        startActivity(intent);
+    }
+
+    private void BackFridge() {
+        Intent intent = new Intent(this, FridgeActivity.class);
+        startActivity(intent);
+    }
+
+    //public voids for visiiblity of food groups for buttons
     //all but visibilityBasics are empty, but that is the example, change R.id.BasicsCollapse to
     //respective collapse layout
     private void VisibilityGrains() {

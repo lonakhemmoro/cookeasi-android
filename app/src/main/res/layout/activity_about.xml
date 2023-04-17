@@ -9,8 +9,9 @@
     <TextView
         android:id="@+id/AboutText"
         android:layout_width="283dp"
-        android:layout_height="121dp"
-        android:layout_marginBottom="372dp"
+        android:layout_height="400dp"
+        android:layout_marginBottom="256dp"
+        android:background="@color/naturalBlack"
         android:text="This is where we put the string for information about ourselves"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
@@ -20,10 +21,11 @@
         android:id="@+id/BackMain_about"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:backgroundTint="@color/accentOrange"
         android:text="Back To Menu"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.79" />
+        app:layout_constraintVertical_bias="0.793" />
 </androidx.constraintlayout.widget.ConstraintLayout>

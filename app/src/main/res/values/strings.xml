@@ -1,11 +1,16 @@
 <resources>
     <string name="app_name"></string>
     <string name="test">testing!!</string>
-
+    <string name="about_page">
+    Welcome to cookeasi!
+    Not everyone is a chef, looking at a fridge and deducing recipes is not a skill most people have.
+        Hence, cookeasi. The app which conveniently takes items from your fridge and displays all the recipes possible with them.
+        Cookeasi aims to save any unnecessary shopping, orders to restaurants, and even expand the horizons of ones own cooking journey.
+    </string>
     <string name="recipe_example">
-2 eggs<br />
-Salt and pepper<br />
-Butter or oil for cooking<br />
+egg
+Salt
+Butter
 <p>
     Instructions:<br />
 
@@ -192,3 +197,4 @@ red pepper flakes<br />
 </p>
     </string>
 </resources>
+

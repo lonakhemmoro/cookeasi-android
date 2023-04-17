@@ -5,12 +5,17 @@ public class itemRecipe {
     public String Title;
      public String Subtext;
 
+     public String RecipeString;
+
     //this is within the recipes_itme.xml, listing the image, title and subheader
     public itemRecipe(int Image, String Title, String Subtext) {
         this.Image = Image;
         this.Title = Title;
         this.Subtext = Subtext;
+
     }
+
+
 
     public int getImage() {
         return Image;
@@ -23,5 +28,6 @@ public class itemRecipe {
     public String getSubtext() {
         return Subtext;
     }
+
 
 }
