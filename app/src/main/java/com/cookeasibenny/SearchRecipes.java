@@ -55,8 +55,15 @@ initSearchWidget();
     }
 
     public void ExampleList(){
+        items.add(new itemRecipe(com.cookeasibenny.R.string.recipe_example, "Avocado Toast",getResources().getString(com.cookeasibenny.R.string.avocado_toast)));
+        items.add(new itemRecipe(com.cookeasibenny.R.string.recipe_example, "Yogurt Parfait",getResources().getString(com.cookeasibenny.R.string.yogurt_parfait)));
+        items.add(new itemRecipe(com.cookeasibenny.R.string.recipe_example, "peanut butter banana smoothie",getResources().getString(com.cookeasibenny.R.string.peanut_butter_banana_smoothie)));
+        items.add(new itemRecipe(com.cookeasibenny.R.string.recipe_example, "Grilled Chicken Salad",getResources().getString(com.cookeasibenny.R.string.grilled_chicken_salad)));
+        items.add(new itemRecipe(com.cookeasibenny.R.string.recipe_example, "Lentil Soup",getResources().getString(com.cookeasibenny.R.string.lentil_soup)));
+        items.add(new itemRecipe(com.cookeasibenny.R.string.recipe_example, "Baked Salmon",getResources().getString(com.cookeasibenny.R.string.baked_salmon)));
+        items.add(new itemRecipe(com.cookeasibenny.R.string.recipe_example, "Spaghetti Bolognese",getResources().getString(com.cookeasibenny.R.string.spaghetti_bolognese)));
     items.add(new itemRecipe(com.cookeasibenny.R.string.recipe_example, "Veggie Wrap",getResources().getString(com.cookeasibenny.R.string.veggie_wrap)));
-    items.add(new itemRecipe(com.cookeasibenny.R.drawable.fridge_image_svg, "S","the best test ever"));
+    items.add(new itemRecipe(com.cookeasibenny.R.drawable.fridge_image_svg, "Quinoa and black_beans",getResources().getString(com.cookeasibenny.R.string.quinoa_and_black_bean)));
     items.add(new itemRecipe(com.cookeasibenny.R.drawable.fridge_image_svg, "T","the best test ever"));
 }
 
