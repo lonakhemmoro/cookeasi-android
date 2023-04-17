@@ -72,7 +72,6 @@ initSearchWidget();
             @Override
             public boolean onQueryTextChange(String s){
                 filteredList.clear();
-                filteredList.add(new itemRecipe(com.cookeasibenny.R.drawable.fridge_image_svg, "R","the best test ever"));
                 for(itemRecipe item : items)
                 {
                     if(item.getTitle().toLowerCase().contains(s.toLowerCase()))
