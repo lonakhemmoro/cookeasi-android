@@ -39,7 +39,13 @@
             android:layout_margin="25dp"
             android:layout_marginBottom="30dp"
             android:text="Find a Recipe" />
-
+        <Button
+            android:id="@+id/MA_FindNewRecipes"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_margin="25dp"
+            android:layout_marginBottom="30dp"
+            android:text="Find a new Recipe" />
         <Button
             android:id="@+id/MA_OpenFridge"
             android:layout_width="wrap_content"

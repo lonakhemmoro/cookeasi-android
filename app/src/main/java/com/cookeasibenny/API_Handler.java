@@ -1,4 +1,4 @@
-package com.cookeasibenny;
+/*package com.cookeasibenny;
 
 import static com.cookeasibenny.FridgeItinerary.FridgeContents;
 
@@ -16,12 +16,21 @@ import java.util.Collections;
 import java.util.List;
 import java.util.concurrent.TimeUnit;
 
+import okhttp3.Call;
+import okhttp3.Callback;
 import okhttp3.HttpUrl;
 import okhttp3.OkHttpClient;
 import okhttp3.Request;
 import okhttp3.Response;
 
 public class API_Handler {
+
+    public interface RecipeFetchListener {
+        void onRecipesFetched(List<Recipe> recipes);
+
+        void onError(String message);
+    }
+
     //pulls in stock ingredients from the fridge.
     public String getInStockIngredients() {
         StringBuilder sb = new StringBuilder();
@@ -35,6 +44,7 @@ public class API_Handler {
         }
         return sb.toString();
     }
+
     public static void Recipes(String[] args) {
         // Call the complexSearch API to get a list of recipes
         String inStockIngredients = FridgeItinerary.getInStockIngredients();
@@ -44,13 +54,13 @@ public class API_Handler {
         if (!recipes.isEmpty()) {
             Recipe selectedRecipe = recipes.get(0);
             // Call the analyzedInstructions API to get the recipe steps
-            List<InstructionStep> steps = getRecipeSteps(selectedRecipe.getId());
+            List<instructionStep> steps = getRecipeSteps(selectedRecipe.getId());
         } else {
             System.out.println("No recipes found.");
         }
     }
 
-    private static List<Recipe> getRecipes(String inStockIngredients) {
+    private static List<Recipe> getRecipes(String inStockIngredients, RecipeFetchListener listener) {
         OkHttpClient client = new OkHttpClient.Builder()
                 .connectTimeout(10, TimeUnit.SECONDS)
                 .writeTimeout(10, TimeUnit.SECONDS)
@@ -69,19 +79,30 @@ public class API_Handler {
                 .url(url)
                 .build();
 
-        try (Response response = client.newCall(request).execute()) {
-            if (!response.isSuccessful()) {
-                throw new IOException("Unexpected response code: " + response);
+        client.newCall(request).enqueue(new Callback() {
+            @Override
+            public void onFailure(Call call, IOException e) {
+                listener.onError(e.getMessage());
             }
-            String responseBody = response.body().string();
-            return parseRecipes(responseBody);
-        } catch (IOException e) {
-            e.printStackTrace();
-            return Collections.emptyList();
-        }
+
+            @Override
+            public void onResponse(Call call, Response response) {
+                if (response.isSuccessful()) {
+                    try {
+                        String responseBody = response.body().string();
+                        List<Recipe> recipes = parseRecipes(responseBody);
+                        listener.onRecipesFetched(recipes);
+                    } catch (IOException e) {
+                        listener.onError(e.getMessage());
+                    }
+                } else {
+                    listener.onError("Unexpected response code: " + response);
+                }
+            }
+        });
     }
 
-    private static List<InstructionStep> getRecipeSteps(int recipeId) {
+    private static List<instructionStep> getRecipeSteps(int recipeId) {
         OkHttpClient client = new OkHttpClient.Builder()
                 .connectTimeout(10, TimeUnit.SECONDS)
                 .writeTimeout(10, TimeUnit.SECONDS)
@@ -107,80 +128,29 @@ public class API_Handler {
         }
     }
 
-    // Helper methods to parse the response into Java objects
-    private static List<Recipe> parseRecipes(String json) throws IOException {
-        ObjectMapper mapper = new ObjectMapper();
-        JsonNode node = mapper.readTree(json);
-        return mapper.readValue(node.traverse(), new TypeReference<List<Recipe>>(){});
-    }
-
-    private static List<InstructionStep> parseInstructionSteps(String json) throws IOException {
-        ObjectMapper mapper = new ObjectMapper();
-        JsonNode node = mapper.readTree(json);
-        return mapper.readValue(node.get(0).get("steps").traverse(), new TypeReference<List<InstructionStep>>(){});
-    }
-
 }
-class Recipe {
-    private int id;
-    private String name;
-    private List<Step> steps;
+        // Helper methods to parse the response into Java objects
+        // Helper methods to parse the response into Java objects
+    private List<Recipe> parseRecipes (String json) throws IOException {
+            ObjectMapper mapper = new ObjectMapper();
+            JsonNode node = mapper.readTree(json).get("results");
+            return mapper.readValue(node.traverse(), new TypeReference<List<Recipe>>() {
+            });
+        }
 
-    // getters and setters
-
-    public int getId() {
-        return id;
+        private List<InstructionStep> parseInstructionSteps (String json) throws IOException {
+            ObjectMapper mapper = new ObjectMapper();
+            JsonNode node = mapper.readTree(json);
+            return mapper.readValue(node.get(0).get("steps").traverse(), new TypeReference<List<InstructionStep>>() {
+            });
+        }
     }
 
-    public void setId(int id) {
-        this.id = id;
-    }
-    public static class Step {
-        private List<Equipment> equipment;
-        private List<Ingredient> ingredients;
-        private Length length;
-        private int number;
-        private String step;
-
-        // getters and setters
-    }
-
-    public static class Equipment {
-        private int id;
-        private String image;
-        private String name;
-        private Temperature temperature;
-
-        // getters and setters
-    }
-
-    public static class Ingredient {
-        private int id;
-        private String image;
-        private String name;
-
-        // getters and setters
-    }
-
-    public static class Length {
-        private double number;
-        private String unit;
-
-        // getters and setters
-    }
-
-    public static class Temperature {
-        private double number;
-        private String unit;
-
-        // getters and setters
-    }
-}
-class InstructionStep {
+class instructionStep {
     private String step;
     private List<String> ingredients;
 
-    public InstructionStep(String step, List<String> ingredients) {
+    public instructionStep(String step, List<String> ingredients) {
         this.step = step;
         this.ingredients = ingredients;
     }
@@ -193,8 +163,8 @@ class InstructionStep {
         return ingredients;
     }
 
-    public static List<InstructionStep> parseJSON(String jsonString) {
-        List<InstructionStep> steps = new ArrayList<>();
+    public static List<instructionStep> parseJSON(String jsonString) {
+        List<instructionStep> steps = new ArrayList<>();
         try {
             JSONArray stepsArray = new JSONArray(jsonString);
             for (int i = 0; i < stepsArray.length(); i++) {
@@ -210,7 +180,7 @@ class InstructionStep {
                         String ingredientName = ingredientData.getString("name");
                         ingredientList.add(ingredientName);
                     }
-                    steps.add(new InstructionStep(stepText, ingredientList));
+                    steps.add(new instructionStep(stepText, ingredientList));
                 }
             }
         } catch (JSONException e) {
@@ -218,82 +188,4 @@ class InstructionStep {
         }
         return steps;
     }
-}
-//example usage
-/*
-String jsonString = "[{...}]"; // JSON data here
-List<InstructionStep> steps = InstructionStep.parseJSON(jsonString);
-for (InstructionStep step : steps) {
-    System.out.println(step.getStep());
-    System.out.println(step.getIngredients());
-}
-
- */
-
-//example output
-/*Step 1: Preheat the oven to 200 degrees F.
-
-Equipment: oven
-Temperature: 200.0 Fahrenheit
-Ingredients: None
-Step 2: Whisk together the flour, pecans, granulated sugar, light brown sugar, baking powder, baking soda, and salt in a medium bowl.
-
-Equipment: whisk, bowl
-Ingredients:
-all purpose flour
-pecans
-granulated sugar
-light brown sugar
-baking powder
-baking soda
-salt
-Step 3: Whisk together the eggs, buttermilk, butter and vanilla extract and vanilla bean in a small bowl.
-
-Equipment: whisk, bowl
-Ingredients:
-eggs
-buttermilk
-butter
-vanilla extract
-vanilla bean
-Step 4: Add the egg mixture to the dry mixture and gently mix to combine. Do not overmix.
-
-Equipment: None
-Ingredients:
-eggs
-all purpose flour
-pecans
-granulated sugar
-light brown sugar
-baking powder
-baking soda
-salt
-butter
-vanilla extract
-vanilla bean
-Step 5: Let the batter sit at room temperature for at least 15 minutes and up to 30 minutes before using.
-
-Equipment: None
-Ingredients: None
-Length: 15 minutes
-Step 6: Heat a cast iron or nonstick griddle pan over medium heat and brush with melted butter. Once the butter begins to sizzle, use 2 tablespoons of the batter for each pancake and cook until the bubbles appear on the surface and the bottom is golden brown, about 2 minutes, flip over and cook until the bottom is golden brown, 1 to 2 minutes longer.
-
-Equipment: griddle, frying pan
-Ingredients:
-eggs
-all purpose flour
-pecans
-granulated sugar
-light brown sugar
-baking powder
-baking soda
-salt
-butter
-vanilla extract
-vanilla bean
-Step 7: Transfer the pancakes to a platter and keep warm in a 200 degree F oven.
-
-Equipment: oven
-Temperature: 200.0 Fahrenheit
-Ingredients: None
- */
+}*/

@@ -99,25 +99,4 @@ public class FridgeItinerary {
             }
         }
     }
-//tester
- /*   public static void main(String[] args) {
-        // Add ingredients
-        addIngredient("flour");
-        addIngredient("sugar", true);
-        addIngredient("butter", false);
-        addIngredient("eggs");
-
-        // Set inStock for some ingredients
-        setInStock("flour", false);
-        setInStock("butter", true);
-
-        // Remove an ingredient
-        removeIngredient("eggs");
-
-        // Add a new ingredient
-        addIngredient("milk", true);
-
-        // Print the itinerary
-        printItinerary();
-    }*/
 }
