@@ -14,7 +14,7 @@
         android:background="@color/lime" />
 
     <TextView
-        android:id="@+id/textView3"
+        android:id="@+id/fridgeEmptyTV"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="The contents of the fridge are empty"
