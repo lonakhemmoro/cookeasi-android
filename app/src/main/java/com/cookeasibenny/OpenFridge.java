@@ -3,8 +3,10 @@ package com.cookeasibenny;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.os.Bundle;
+import android.view.View;
 import android.widget.ArrayAdapter;
 import android.widget.ListView;
+import android.widget.TextView;
 
 import java.util.Collection;
 
@@ -12,10 +14,20 @@ public class OpenFridge extends AppCompatActivity {
 
     ListView listView;
     FridgeItinerary fridgeItinerary;
+    TextView fridgeEmptyTV;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_open_fridge);
+
+        fridgeEmptyTV = findViewById(R.id.fridgeEmptyTV);
+
+        if (fridgeItinerary.FridgeContents.size() != 0) {
+            fridgeEmptyTV.setVisibility(View.INVISIBLE);
+        } else {
+            fridgeEmptyTV.setVisibility(View.VISIBLE);
+        }
 
         String [] ingredientsNameArray = new String[fridgeItinerary.FridgeContents.size()];
         // Get the values from the map
