@@ -5,6 +5,8 @@ import androidx.appcompat.app.AppCompatActivity;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
+import android.view.View;
+import android.widget.Button;
 import android.widget.SearchView;
 import java.util.ArrayList;
 import java.util.List;
@@ -15,13 +17,33 @@ public class SearchRecipes extends AppCompatActivity  {
     List<itemRecipe> filteredList = new ArrayList<itemRecipe>();
 // for the getstrings
     AdapterRecipe.RecyclerViewClickListener listener;
+
+    Button backToMenu;
+    Button goToFridge;
     protected void onCreate(Bundle savedInstanceState) {
 
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_search_recipes);
         ExampleList();
 
+        backToMenu = findViewById(R.id.BackToMenu);
+        goToFridge = findViewById(R.id.GoToFridge);
 
+        backToMenu.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(getApplicationContext(), MainActivity.class);
+                startActivity(intent);
+            }
+        });
+
+        goToFridge.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(getApplicationContext(), FridgeActivity.class);
+                startActivity(intent);
+            }
+        });
 
 
 
