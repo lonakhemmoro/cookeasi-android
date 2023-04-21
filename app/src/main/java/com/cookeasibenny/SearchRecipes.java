@@ -67,6 +67,7 @@ initSearchWidget();
                 }
                 else {
                     intent.putExtra("recipe_name", filteredList.get(position).getSubtext());
+                    intent.putExtra("image",filteredList.get(position).getImage());
                     startActivity(intent);
                 }
             }
@@ -74,16 +75,16 @@ initSearchWidget();
     }
 
     public void ExampleList(){
-        items.add(new itemRecipe(com.cookeasibenny.R.string.recipe_example, "Avocado Toast",getResources().getString(com.cookeasibenny.R.string.avocado_toast)));
-        items.add(new itemRecipe(com.cookeasibenny.R.string.recipe_example, "Yogurt Parfait",getResources().getString(com.cookeasibenny.R.string.yogurt_parfait)));
-        items.add(new itemRecipe(com.cookeasibenny.R.string.recipe_example, "peanut butter banana smoothie",getResources().getString(com.cookeasibenny.R.string.peanut_butter_banana_smoothie)));
-        items.add(new itemRecipe(com.cookeasibenny.R.string.recipe_example, "Grilled Chicken Salad",getResources().getString(com.cookeasibenny.R.string.grilled_chicken_salad)));
-        items.add(new itemRecipe(com.cookeasibenny.R.string.recipe_example, "Lentil Soup",getResources().getString(com.cookeasibenny.R.string.lentil_soup)));
-        items.add(new itemRecipe(com.cookeasibenny.R.string.recipe_example, "Baked Salmon",getResources().getString(com.cookeasibenny.R.string.baked_salmon)));
-        items.add(new itemRecipe(com.cookeasibenny.R.string.recipe_example, "Spaghetti Bolognese",getResources().getString(com.cookeasibenny.R.string.spaghetti_bolognese)));
-    items.add(new itemRecipe(com.cookeasibenny.R.string.recipe_example, "Veggie Wrap",getResources().getString(com.cookeasibenny.R.string.veggie_wrap)));
-    items.add(new itemRecipe(com.cookeasibenny.R.drawable.fridge_image_svg, "Quinoa and black_beans",getResources().getString(com.cookeasibenny.R.string.quinoa_and_black_bean)));
-    items.add(new itemRecipe(com.cookeasibenny.R.drawable.fridge_image_svg, "T","the best test ever"));
+        items.add(new itemRecipe(com.cookeasibenny.R.drawable.avocadotoast, "Avocado Toast",getResources().getString(com.cookeasibenny.R.string.avocado_toast)));
+        items.add(new itemRecipe(com.cookeasibenny.R.drawable.yogurt, "Yogurt Parfait",getResources().getString(com.cookeasibenny.R.string.yogurt_parfait)));
+        items.add(new itemRecipe(com.cookeasibenny.R.drawable.pbsmoothie, "peanut butter banana smoothie",getResources().getString(com.cookeasibenny.R.string.peanut_butter_banana_smoothie)));
+        items.add(new itemRecipe(com.cookeasibenny.R.drawable.chickensalad, "Grilled Chicken Salad",getResources().getString(com.cookeasibenny.R.string.grilled_chicken_salad)));
+        items.add(new itemRecipe(com.cookeasibenny.R.drawable.lentil_soup_3738547_960_720, "Lentil Soup",getResources().getString(com.cookeasibenny.R.string.lentil_soup)));
+        items.add(new itemRecipe(com.cookeasibenny.R.drawable.salmon_5371963_960_720, "Baked Salmon",getResources().getString(com.cookeasibenny.R.string.baked_salmon)));
+        items.add(new itemRecipe(com.cookeasibenny.R.drawable.spaghetti_787048_960_720, "Spaghetti Bolognese",getResources().getString(com.cookeasibenny.R.string.spaghetti_bolognese)));
+    items.add(new itemRecipe(com.cookeasibenny.R.drawable.food_wraps_3154084_960_720, "Veggie Wrap",getResources().getString(com.cookeasibenny.R.string.veggie_wrap)));
+    items.add(new itemRecipe(com.cookeasibenny.R.drawable.quinoa_2986706_960_720, "Quinoa and black_beans",getResources().getString(com.cookeasibenny.R.string.quinoa_and_black_bean)));
+    items.add(new itemRecipe(com.cookeasibenny.R.drawable.fridge_image_svg, "TestCase","the best test ever"));
 }
 
     private void initSearchWidget(){
