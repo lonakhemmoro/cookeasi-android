@@ -37,7 +37,7 @@
             android:layout_height="wrap_content"
 
 
-            android:text="Find a Recipe" />
+            android:text="See your Recipes" />
 
         <Button
             android:id="@+id/MA_FindNewRecipes"

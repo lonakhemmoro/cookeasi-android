@@ -6,26 +6,45 @@
     android:layout_height="match_parent"
     tools:context=".AboutActivity">
 
-    <TextView
-        android:id="@+id/AboutText"
-        android:layout_width="283dp"
-        android:layout_height="400dp"
-        android:layout_marginBottom="256dp"
-        android:background="@color/naturalBlack"
-        android:text="This is where we put the string for information about ourselves"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent" />
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
 
-    <Button
-        android:id="@+id/BackMain_about"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:backgroundTint="@color/accentOrange"
-        android:text="Back To Menu"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.793" />
+        <ImageView
+            android:id="@+id/imageView2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:srcCompat="@drawable/logo_svg"
+            android:layout_gravity="center"/>
+
+        <TextView
+            android:id="@+id/AboutText"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:background="@color/naturalBlack"
+            android:padding="20dp"
+            android:text="@string/about_page" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"/>
+
+        <Button
+            android:id="@+id/GithubButton"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:text="Open Our Github" />
+
+        <Button
+            android:id="@+id/BackMain_about"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:backgroundTint="@color/accentOrange"
+            android:text="Back To Menu" />
+    </LinearLayout>
+
 </androidx.constraintlayout.widget.ConstraintLayout>
