@@ -63,10 +63,13 @@ initSearchWidget();
                 Intent intent = new Intent(getApplicationContext(),RecipePage1.class);
                 if(filteredList.isEmpty()){
                     intent.putExtra("recipe_name",items.get(position).getSubtext());
+                    intent.putExtra("image",items.get(position).getImage());
+                    intent.putExtra("title", items.get(position).getTitle());
                     startActivity(intent);
                 }
                 else {
                     intent.putExtra("recipe_name", filteredList.get(position).getSubtext());
+                    intent.putExtra("title", filteredList.get(position).getTitle());
                     intent.putExtra("image",filteredList.get(position).getImage());
                     startActivity(intent);
                 }
