@@ -1,13 +1,13 @@
 package com.cookeasibenny;
 
 import androidx.appcompat.app.AppCompatActivity;
-
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.ArrayAdapter;
 import android.widget.ListView;
 import android.widget.TextView;
-
+import android.widget.Button;
 import java.util.Collection;
 
 public class OpenFridge extends AppCompatActivity {
@@ -15,6 +15,8 @@ public class OpenFridge extends AppCompatActivity {
     ListView listView;
     FridgeItinerary fridgeItinerary;
     TextView fridgeEmptyTV;
+
+   Button Back;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -48,5 +50,18 @@ public class OpenFridge extends AppCompatActivity {
                 android.R.layout.simple_list_item_1, ingredientsNameArray);
 
         listView.setAdapter(adapter);
+
+        Back = (Button) findViewById(com.cookeasibenny.R.id.BackFromFridgeTV);
+
+        Back.setOnClickListener(new View.OnClickListener(){
+            public void onClick(View v){
+                openintent();
+            }
+        });
+    }
+
+    private void openintent() {
+        Intent intent1 = new Intent(this, MainActivity.class);
+        startActivity(intent1);
     }
 }
