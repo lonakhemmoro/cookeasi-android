@@ -1,5 +1,7 @@
 package com.cookeasibenny;
 
+import android.content.Intent;
+import android.net.Uri;
 import android.os.Bundle;
 import android.util.Log;
 
@@ -43,8 +45,8 @@ public class FindNewRecipesActivity extends AppCompatActivity {
 
         Map<String, String> options = new HashMap<>();
         options.put("apiKey", "c3280ce00f614a3e84d7cd393353fdb5");
-        options.put("includeIngredients", inStockIngredients);
-        options.put("number", "10");
+        options.put("includeIngredients", "bread, chicken");
+        options.put("number", "60");
         options.put("sort", "min-missing-ingredients");
         options.put("instructionsRequired", "true");
         options.put("fillIngredients", "true");
@@ -60,26 +62,23 @@ public class FindNewRecipesActivity extends AppCompatActivity {
                     recipeList.addAll(response.body().results);
                     adapter.notifyDataSetChanged();
 
-                    // Add this log statement
                     Log.d("API JSON Body", response.body().toString());
-
                     Log.d("FindNewRecipesActivity", "recipeList size: " + recipeList.size());
 
                     // Set up the click listener for the "View Recipe" button
                     adapter.setOnItemClickListener(position -> {
                         // Handle the click event and open the recipe URL
-                        String sourceUrl = recipeList.get(position).sourceUrl;
-                        Log.d("Recipe URL", sourceUrl);
+                        String spoonacularSourceUrl = recipeList.get(position).spoonacularSourceUrl;
+                        Log.d("Recipe URL", spoonacularSourceUrl);
+
+                        // Open the URL in Chrome or the default browser
+                        Intent browserIntent = new Intent(Intent.ACTION_VIEW, Uri.parse(spoonacularSourceUrl));
+                        startActivity(browserIntent);
                     });
                 } else {
                     Log.e("API Error", "Failed to fetch recipes");
                 }
             }
-
-
-
-
-
 
             @Override
             public void onFailure(Call<Recipe.Root> call, Throwable t) {
@@ -87,6 +86,7 @@ public class FindNewRecipesActivity extends AppCompatActivity {
             }
         });
     }
+
     private void parseRecipes(Recipe.Root response) {
         if (response != null && response.results != null) {
             recipeList.clear();
