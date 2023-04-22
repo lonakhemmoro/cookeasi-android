@@ -139,7 +139,13 @@ public class Recipe {
         public int offset;
         public int number;
         public int totalResults;
+        public void clearResults() {
+            if (results != null) {
+                results.clear();
+            }
+        }
     }
+
 
     @JsonIgnoreProperties(ignoreUnknown = true)
     public static class Step {

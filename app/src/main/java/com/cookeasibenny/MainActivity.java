@@ -16,6 +16,9 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
+        Recipe.Root root = new Recipe.Root();
+        root.clearResults();
+
         Fridge = (Button) findViewById(R.id.MA_OpenFridge);
         About = (Button) findViewById(R.id.MA_About);
         FindRecipe = (Button) findViewById(R.id.MA_FindRecipe);

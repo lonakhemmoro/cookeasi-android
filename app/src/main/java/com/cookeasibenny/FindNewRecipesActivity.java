@@ -42,12 +42,19 @@ public class FindNewRecipesActivity extends AppCompatActivity {
     }
 
 
+
     private void fetchRecipes(String inStockIngredients) {
         SpoonacularApi api = ApiClient.getRetrofitInstance().create(SpoonacularApi.class);
 
+        recipeList.clear();
+        adapter.notifyDataSetChanged();
+
+        Recipe.Root root = new Recipe.Root();
+        root.clearResults();
+
         Map<String, String> options = new HashMap<>();
         options.put("apiKey", "c3280ce00f614a3e84d7cd393353fdb5");
-        options.put("includeIngredients", "bread, chicken");
+        options.put("includeIngredients", inStockIngredients);
         options.put("number", "60");
         options.put("sort", "min-missing-ingredients");
         options.put("instructionsRequired", "true");
@@ -60,12 +67,13 @@ public class FindNewRecipesActivity extends AppCompatActivity {
             @Override
             public void onResponse(Call<Recipe.Root> call, Response<Recipe.Root> response) {
                 if (response.isSuccessful()) {
+                    Log.d("API JSON Body", response.body().toString());
+                    Log.d("FindNewRecipesActivity", "Received results size: " + response.body().results.size());
                     recipeList.clear();
                     recipeList.addAll(response.body().results);
-                    adapter.notifyDataSetChanged();
 
-                    Log.d("API JSON Body", response.body().toString());
-                    Log.d("FindNewRecipesActivity", "recipeList size: " + recipeList.size());
+                    Log.d("FindNewRecipesActivity", "Updated recipeList size: " + recipeList.size());
+                    adapter.notifyDataSetChanged();
 
                     // Set up the click listener for the "View Recipe" button
                     adapter.setOnItemClickListener(position -> {
