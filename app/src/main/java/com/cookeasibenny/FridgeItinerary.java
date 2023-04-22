@@ -57,7 +57,7 @@ public class FridgeItinerary {
         StringBuilder sb = new StringBuilder();
         for (Ingredient ingredient : FridgeContents.values()) {
             if (ingredient.getInStock()) {
-                sb.append(ingredient.getName()).append(",");
+                sb.append(ingredient.getName()).append(", ");
             }
         }
         if (sb.length() > 0) {

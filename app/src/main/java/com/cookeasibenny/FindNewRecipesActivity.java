@@ -30,10 +30,13 @@ public class FindNewRecipesActivity extends AppCompatActivity {
         recyclerView.setHasFixedSize(true);
 
         recipeList = new ArrayList<>();
+        adapter = new RecipeCardAdapter(this, recipeList);
+        recyclerView.setAdapter(adapter);
 
         String inStockIngredients = FridgeItinerary.getInStockIngredients();
         fetchRecipes(inStockIngredients);
     }
+
 
     private void fetchRecipes(String inStockIngredients) {
         SpoonacularApi api = ApiClient.getRetrofitInstance().create(SpoonacularApi.class);
@@ -42,19 +45,25 @@ public class FindNewRecipesActivity extends AppCompatActivity {
         options.put("apiKey", "c3280ce00f614a3e84d7cd393353fdb5");
         options.put("includeIngredients", inStockIngredients);
         options.put("number", "10");
+        options.put("sort", "min-missing-ingredients");
         options.put("instructionsRequired", "true");
         options.put("fillIngredients", "true");
         options.put("addRecipeInformation", "true");
 
         Call<Recipe.Root> call = api.getRecipes(options);
+        System.out.println(inStockIngredients);
         call.enqueue(new Callback<Recipe.Root>() {
             @Override
             public void onResponse(Call<Recipe.Root> call, Response<Recipe.Root> response) {
                 if (response.isSuccessful()) {
-                    recipeList = new ArrayList<>(response.body().results);
-                    adapter = new RecipeCardAdapter(this, recipeList);
-                    recyclerView.setAdapter(adapter);
+                    recipeList.clear();
+                    recipeList.addAll(response.body().results);
+                    adapter.notifyDataSetChanged();
 
+                    // Add this log statement
+                    Log.d("API JSON Body", response.body().toString());
+
+                    Log.d("FindNewRecipesActivity", "recipeList size: " + recipeList.size());
 
                     // Set up the click listener for the "View Recipe" button
                     adapter.setOnItemClickListener(position -> {
@@ -66,6 +75,11 @@ public class FindNewRecipesActivity extends AppCompatActivity {
                     Log.e("API Error", "Failed to fetch recipes");
                 }
             }
+
+
+
+
+
 
             @Override
             public void onFailure(Call<Recipe.Root> call, Throwable t) {

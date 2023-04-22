@@ -1,5 +1,7 @@
 package com.cookeasibenny;
 
+import android.content.Context;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -11,12 +13,12 @@ import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.bumptech.glide.Glide;
+import com.cookeasibenny.Recipe.Result;
 
 import java.util.ArrayList;
 
-import retrofit2.Callback;
-
 public class RecipeCardAdapter extends RecyclerView.Adapter<RecipeCardAdapter.RecipeViewHolder> {
+    private Context context;
     private ArrayList<Recipe.Result> recipeList;
     private OnItemClickListener listener;
 
@@ -50,9 +52,11 @@ public class RecipeCardAdapter extends RecyclerView.Adapter<RecipeCardAdapter.Re
         }
     }
 
-    public RecipeCardAdapter(Callback<Recipe.Root> callback, ArrayList<Recipe.Result> recipeList) {
+    public RecipeCardAdapter(Context context, ArrayList<Result> recipeList) {
+        this.context = context;
         this.recipeList = recipeList;
     }
+
 
     @NonNull
     @Override
@@ -63,10 +67,13 @@ public class RecipeCardAdapter extends RecyclerView.Adapter<RecipeCardAdapter.Re
 
     @Override
     public void onBindViewHolder(@NonNull RecipeViewHolder holder, int position) {
-        Recipe.Result currentItem = recipeList.get(position);
-        holder.recipeTitle.setText(currentItem.title);
-        Glide.with(holder.itemView.getContext()).load(currentItem.image).into(holder.recipeImage);
+        Recipe.Result currentRecipe = recipeList.get(position);
+        holder.recipeTitle.setText(currentRecipe.title);
+        Glide.with(holder.itemView.getContext()).load(currentRecipe.image).into(holder.recipeImage);
+
+        Log.d("RecipeCardAdapter", "Position: " + position + ", Title: " + currentRecipe.title + ", Image URL: " + currentRecipe.image);
     }
+
 
     @Override
     public int getItemCount() {

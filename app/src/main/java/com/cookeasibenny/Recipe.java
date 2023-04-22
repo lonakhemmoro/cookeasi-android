@@ -129,6 +129,12 @@ public class Recipe {
 
     @JsonIgnoreProperties(ignoreUnknown = true)
     public static class Root {
+        @Override
+        public String toString() {
+            return "Root{" +
+                    "results=" + results +
+                    '}';
+        }
         public ArrayList<Result> results;
         public int offset;
         public int number;
