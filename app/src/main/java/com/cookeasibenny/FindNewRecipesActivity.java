@@ -17,6 +17,8 @@ import retrofit2.Call;
 import retrofit2.Callback;
 import retrofit2.Response;
 
+// :)
+// Finalized code
 public class FindNewRecipesActivity extends AppCompatActivity {
     private RecyclerView recyclerView;
     private RecipeCardAdapter adapter;
